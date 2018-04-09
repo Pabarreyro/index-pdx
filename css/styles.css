@@ -1,4 +1,4 @@
-body {
+.navbar {
   color:white;
 }
 
@@ -9,4 +9,14 @@ body {
 #submitBtn {
   padding:10px;
   width: 200px;
+}
+
+.placeImage {
+  float:left;
+  margin-right: 30px;
+}
+
+.place li {
+  list-style: none;
+  display: inline-block;
 }

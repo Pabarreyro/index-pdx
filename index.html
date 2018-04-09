@@ -48,14 +48,13 @@
       <main class="container-fluid" id="user-output">
         <div class="well place">
           <img class="placeImage" src="img/powells.jpeg" alt="an image of a bookstore">
-          <h2>Powell's City of Books</h2>
-          <i data-feather="star"></i><br>
-          <i data-feather="dollar-sign"></i>
-          <p>hours: </p>
+          <h2>Powell's City of Books  <i data-feather="star" class="floatImg"></i><i data-feather="star" class="floatImg"></i><i data-feather="star" class="floatImg"></i></h2>
+          <i data-feather="dollar-sign"></i><i data-feather="dollar-sign"></i>
+          <p class="hrs-float"><strong>Hours: </strong></p>
           <ul id="hours-list">
-            <li id="weekday-hours">Mon-Fri: <span id="open-time"></span> - <span id="close-time"></span></li>
-            <li id="weeknight-hours">Sat: <span id="open-time"></span> - <span id="close-time"></span></li>
-            <li id="weeknight-hours">Sun: <span id="open-time"></span> - <span id="close-time"></span></li>
+            <li class="weeknight-hours">Sun: <span id="open-time"></span> - <span id="close-time"></span></li>
+            <li class="weeknight-hours">Sat: <span id="open-time"></span> - <span id="close-time"></span></li>
+            <li class="weekday-hours">Mon-Fri: <span id="open-time"></span> - <span id="close-time"></span></li>
           </ul>
           <p>Powell's Books is a chain of bookstores in Portland, Oregon, and its surrounding metropolitan area. Powell's headquarters, dubbed Powell's City of Books, claims to be the largest independent new and used bookstore in the world.</p>
           <ul id="features-list">
@@ -65,6 +64,7 @@
           <script>
             feather.replace()
           </script>
+        <hr>
         </div>
       </main>
     </div>

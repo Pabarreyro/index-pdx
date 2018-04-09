@@ -11,12 +11,27 @@
   width: 200px;
 }
 
+.place {
+  padding-top: 14px;
+}
+
 .placeImage {
   float:left;
+  margin-bottom: 20px;
   margin-right: 30px;
 }
 
 .place li {
   list-style: none;
   display: inline-block;
+}
+
+.hrs-float {
+  float:right;
+  margin-right: 60px;
+}
+
+.weekday-hours, .weeknight-hours {
+  float:right;
+  padding-bottom: 12px;
 }

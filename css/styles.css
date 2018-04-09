@@ -1,0 +1,12 @@
+body {
+  color:white;
+}
+
+#filter-form {
+  text-align: center;
+}
+
+#submitBtn {
+  padding:10px;
+  width: 200px;
+}

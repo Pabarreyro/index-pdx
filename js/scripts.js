@@ -15,6 +15,18 @@ function Neighborhood(name='', places=[]) {
   this.places = places;
 }
 
+// filter by neighborhoods name
+Neighborhood.prototype.filterByName = function (userInput) {
+  var neighborhoods = [pearl, downtown];
+  for(var i = 0; i < neighborhoods.length; i ++){
+    if(userInput === neighborhoods[i].name){
+      return neighborhoods[i];
+    }
+  }
+  return false;
+};
+
+
 // Place Objects (Pearl)
 var powells = new Place("Powell's City of Books",
 "$$",
@@ -60,16 +72,8 @@ var downtown = new Neighborhood("Downtown");
 downtown.places.push(chineseGarden, groundKontrol, departure);
 
 
-// filter by neighborhoods name
-function filterByNeighborhoodName(userInput){
-  var neighborhoods = [pearl, downtown];
-  for(var i = 0; i < neighborhoods.length; i ++){
-    if(userInput === neighborhoods[i].name){
-      return neighborhoods[i];
-    }
-  }
-  return false;
-}
 
 
-alert(filterByNeighborhoodName('Pearl'));
+// alert(filterByNeighborhoodName('Pearl'));
+
+// search anywher

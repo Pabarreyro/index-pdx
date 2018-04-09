@@ -8,7 +8,17 @@ h1 {
   color:white;
 }
 
-#navBar-list {
+#hamburger-nav-icon:hover {
+  cursor: pointer;
+  background-color: #17a2b8;
+  border-radius: 2px;
+}
+
+.hide {
+  display: none;
+}
+
+#form-field {
   background-color: #404347;
 }
 

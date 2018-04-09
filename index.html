@@ -6,45 +6,95 @@
       <script src="js/jquery-3.3.1.js"></script>
       <script src="js/scripts.js"></script>
       <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+      <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
     <title>Portland Finder</title>
   </head>
   <body>
     <div class="container-fluid">
       <div class="navbar navbar-dark bg-dark">
         <h1>Index PDX</h1>
-        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon" id="hamburger-nav-icon"></span>
       </div>
-      <div class="row navbar navbar-dark bg-dark" id="hide-navBar">
+      <!-- <div class="row navbar navbar-dark bg-dark" id="hide-navBar"> -->
+      <div class="well" id="navBar-list">
         <form id="filter-form">
           <div class="form-row">
-            <div class="form-group col-md-3">
-              <label for="">Price</label>
-              <input class="form-control">
+            <div class="form-control well col-lg-4">
+              <label for="price">Price</label>
+              <select class="form-control">
+                <option>$</option>
+                <option>$$</option>
+                <option>$$$</option>
+              </select>
             </div>
-            <div class="form-group col-md-3">
-              <label for="">Location</label>
-              <input class="form-control">
+            <div class="form-control well col-lg-4">
+              <label for="location">Location</label>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="location" value="NW">
+                  NW
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="location" value="SW">
+                  SW
+                </label>
+              </div>
             </div>
-            <div class="form-group col-md-3">
-              <label for="">Type</label>
-              <input class="form-control">
-            </div>
-            <div class="form-group col-md-3">
-              <label for="">Hours</label>
-              <input class="form-control">
+            <div class="form-control well col-lg-4">
+              <label for="type">Type</label>
+              <select class="form-control">
+                <option>Music</option>
+                <option>Food</option>
+              </select>
             </div>
           </div>
           <div class="form-row">
-            <div class="form-group col-md-3">
+            <div class="form-control well col-lg-6">
+              <label for="hours">Hours</label>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="hours" value="Early Morning">
+                  Early Morning
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="hours" value="Morning">
+                  Morning
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="hours" value="Afternoon">
+                  Afternoon
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="hours" value="Late Night">
+                  Late Night
+                </label>
+              </div>
+            </div>
+            <div class="form-control well col-lg-6">
               <label>Dietary Restrictions</label>
-              <input class="form-control">
+              <br>
+              <input type="checkbox" name="diet" value="Vegan"> Vegan<br>
+              <input type="checkbox" name="diet" value="Gluten Free"> Gluten Free<br>
+              <input type="checkbox" name="diet" value="Raw"> Raw<br>
+              <input type="checkbox" name="diet" value="Organic"> Organic<br>
             </div>
           </div>
           <div class="form-row">
-            <button type="submit" class="btn btn-outline-info" id="submitBtn">Filter</button>
+            <div class="form-row" id="submitBtn">
+              <button type="submit" class="btn btn-outline-info">Filter</button>
+            </div>
           </div>
-        </form>
-      </div>
+      </form>
+    </div>
+      <!-- </div> -->
       <main class="container-fluid" id="user-output">
         <div class="well place">
           <img class="placeImage" src="img/powells.jpeg" alt="an image of a bookstore">

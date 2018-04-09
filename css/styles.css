@@ -1,5 +1,15 @@
+h1 {
+  /*text-align: center;*/
+  font-family: 'Abril Fatface', cursive;
+  font-size: 47px;
+}
+
 .navbar {
   color:white;
+}
+
+#navBar-list {
+  background-color: #404347;
 }
 
 #filter-form {
@@ -7,8 +17,11 @@
 }
 
 #submitBtn {
+  display: block;
+  margin: 0 auto;
   padding:10px;
   width: 200px;
+  justify-content: center;
 }
 
 .place {

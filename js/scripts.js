@@ -26,6 +26,22 @@ Neighborhood.prototype.filterByName = function (userInput) {
   return false;
 };
 
+// function filter by places properties
+// input: userInput, could be any properties of a place
+// places: an array of places
+// return: an array of matched places
+function filterByPlaceProperties(input, places) {
+  var outplaces =[];
+  places.forEach(function(place){
+    for(let property in place){
+      if (place[property].includes(input) || place[property] === input){
+        outplaces.push(place);
+      }
+    }
+  });
+  return outplaces;
+};
+
 
 // Place Objects (Pearl)
 var powells = new Place("Powell's City of Books",
@@ -34,6 +50,10 @@ var powells = new Place("Powell's City of Books",
 [],
 ["family-friendly", "casual", "book"],
 ["morning", "afternoon", "evening"]);
+
+
+
+
 
 var prasad = new Place("Prasad",
 "$$",
@@ -46,7 +66,7 @@ var prasad = new Place("Prasad",
 var chineseGarden = new Place("Lan Su Chinese Garden",
 "$$",
 ["garden", "parks"],
-["tea"],
+[],
 ["family-friendly", "nature", "culture"],
 ["morning", "afternoon"]);
 
@@ -74,6 +94,17 @@ downtown.places.push(chineseGarden, groundKontrol, departure);
 
 
 
-// alert(filterByNeighborhoodName('Pearl'));
+Neighborhood.prototype.filterByPrice = function (inputPrice) {
+  var neighborhoods = [pearl, downtown];
+  for (i = 0; i < neighborhoods.length; i++) {
+   if (inputPrice === neighborhoods[i].price) {
+     neighborhoods[i].price;
+   }
+ }
+};
 
-// search anywher
+
+
+var places = [powells, prasad, groundKontrol, chineseGarden];
+var out = filterByPlaceProperties('morning', places);
+out.forEach(place => console.log(place.name));

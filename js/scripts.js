@@ -64,7 +64,7 @@ downtown.places.push(chineseGarden, groundKontrol, departure);
 function filterByNeighborhoodName(userInput){
   var neighborhoods = [pearl, downtown];
   for(var i = 0; i < neighborhoods.length; i ++){
-    if(userInput === neighborhoods[i].name || neighborhoods[i].places.includes(userInput)){
+    if(userInput === neighborhoods[i].name){
       return neighborhoods[i];
     }
   }

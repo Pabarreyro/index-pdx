@@ -6,7 +6,8 @@ h1 {
 }
 
 .navbar {
-  color:#3ca7b7;
+  color:#f27107;
+  text-shadow: 2px 2px 4px #160b01;
 }
 
 #hamburger-nav-icon:hover {
@@ -20,10 +21,10 @@ h1 {
 }
 
 .label-dropdown {
-  color: #024206;
+  color: #f27107;
   font-size: 22px;
   font-family: 'Old Standard TT', serif;
-
+  text-shadow: 2px 2px 4px #160b01;
 }
 
 .hide {

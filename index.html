@@ -7,6 +7,7 @@
       <script src="js/scripts.js"></script>
       <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
       <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Abel|Old+Standard+TT" rel="stylesheet">
     <title>Index PDX</title>
   </head>
   <body>
@@ -15,20 +16,19 @@
         <h1>Index PDX</h1>
         <span class="navbar-toggler-icon" id="hamburger-nav-icon"></span>
       </div>
-      <!-- <div class="row navbar navbar-dark bg-dark" id="hide-navBar"> -->
       <div class="well" id="form-field">
         <form class="hide" id="filter-form">
           <div class="form-row">
-            <div class="form-control well col-lg-4">
-              <label for="price">Price</label>
+            <div class="form-control well col-lg-2">
+              <label for="price" class="label-dropdown">Price</label>
               <select class="form-control">
                 <option>$</option>
                 <option>$$</option>
                 <option>$$$</option>
               </select>
             </div>
-            <div class="form-control well col-lg-4">
-              <label for="location">Location</label>
+            <div class="form-control well col-lg-2">
+              <label for="location" class="label-dropdown">Location</label>
               <div class="radio">
                 <label>
                   <input type="radio" name="location" value="NW">
@@ -42,17 +42,15 @@
                 </label>
               </div>
             </div>
-            <div class="form-control well col-lg-4">
-              <label for="type">Type</label>
+            <div class="form-control well col-lg-2">
+              <label for="type" class="label-dropdown">Type</label>
               <select class="form-control">
                 <option>Music</option>
                 <option>Food</option>
               </select>
             </div>
-          </div>
-          <div class="form-row">
-            <div class="form-control well col-lg-6">
-              <label for="hours">Hours</label>
+            <div class="form-control well col-lg-2">
+              <label for="hours" class="label-dropdown">Hours</label>
               <div class="radio">
                 <label>
                   <input type="radio" name="hours" value="Early Morning">
@@ -78,8 +76,8 @@
                 </label>
               </div>
             </div>
-            <div class="form-control well col-lg-6">
-              <label>Dietary Restrictions</label>
+            <div class="form-control well col-lg-2">
+              <label class="label-dropdown" class="label-dropdown">Dietary Restrictions</label>
               <br>
               <input type="checkbox" name="diet" value="Vegan"> Vegan<br>
               <input type="checkbox" name="diet" value="Gluten Free"> Gluten Free<br>
@@ -87,29 +85,30 @@
               <input type="checkbox" name="diet" value="Organic"> Organic<br>
             </div>
           </div>
-          <div class="form-row">
-            <div class="form-row" id="submitBtn">
-              <button type="submit" class="btn btn-outline-info">Filter</button>
-            </div>
+          <div id="submitBtn">
+            <button type="submit" class="btn btn-secondary w-75 p-2">Filter</button>
           </div>
       </form>
     </div>
-      <!-- </div> -->
       <main class="container-fluid" id="user-output">
         <div class="well place">
           <img class="placeImage" src="img/powells.jpeg" alt="an image of a bookstore">
-          <h2>Powell's City of Books  <i data-feather="star" class="floatImg"></i><i data-feather="star" class="floatImg"></i><i data-feather="star" class="floatImg"></i></h2>
-          <i data-feather="dollar-sign"></i><i data-feather="dollar-sign"></i>
+          <h2><span class="h2-style">Powell's City of Books</span>  <i data-feather="star" class="floatImg"></i><i data-feather="star" class="floatImg"></i><i data-feather="star" class="floatImg"></i></h2>
+          <i data-feather="dollar-sign" id="dollar-sign"></i><i data-feather="dollar-sign" id="dollar-sign"></i>
           <p class="hrs-float"><strong>Hours: </strong></p>
           <ul id="hours-list">
             <li class="weeknight-hours">Sun: <span id="open-time"></span> - <span id="close-time"></span></li>
             <li class="weeknight-hours">Sat: <span id="open-time"></span> - <span id="close-time"></span></li>
             <li class="weekday-hours">Mon-Fri: <span id="open-time"></span> - <span id="close-time"></span></li>
           </ul>
-          <p>Powell's Books is a chain of bookstores in Portland, Oregon, and its surrounding metropolitan area. Powell's headquarters, dubbed Powell's City of Books, claims to be the largest independent new and used bookstore in the world.</p>
+          <p>Powell's Books is an independent bookseller serving Portland, Oregon, since 1971. We've grown to employ over 530 people across five Portland-area stores and Powells.com, and our book inventory exceeds two million volumes. In spite of our substantial size and reach, we remain grounded by our company's core values, which have guided us through the ups and downs of the bookselling industry. Each and every employee's love of books drives us forward.</p>
+
+          <p>We have an especially intimate relationship with Portland — what other city in America can name a bookstore as its top attraction? We host over 500 author events a year, in addition to children's storytimes, writing workshops, game demonstrations, and book clubs. Through Powells.com and our expansive online community, we also reach readers around the world, people who are as excited about books as we are.</p>
           <ul id="features-list">
-            <li>key1</li>
-            <li>key2</li>
+            <li>Book</li>
+            <li>Casual</li>
+            <li>Family-friendly</li>
+            <li>Cafe</li>
           </ul>
           <script>
             feather.replace()

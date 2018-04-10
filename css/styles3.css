@@ -38,16 +38,13 @@ h1 {
 .form-control {
   text-align: left;
 }
-
 .form-control.well {
-    background-color: rgb(163, 154, 151, .5);
+    background-color: rgb(144, 134, 137, .3);
     border-color: rgb(49,49,49,.5);
 }
 label.label-dropdown {
   color: white;
 }
-
-
 
 .col-lg-2, .col-lg-5 {
   padding: 8px;

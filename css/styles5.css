@@ -1,3 +1,20 @@
+html, body {
+  min-height: 100%;
+}
+body {
+  /*background-color: rgb(238,242,243);*/
+  /*background-image: url(../img/white1.jpg);*/
+  /*background-color: white;*/
+background: -webkit-linear-gradient(to top, #3fada8, #808080);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to top, #3fada8, #808080); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  -webkit-background-size: cover;
+ -moz-background-size: cover;
+ -o-background-size: cover;
+ background-size: cover;
+  background-repeat:   no-repeat;
+}
+
 h1 {
   /*text-align: center;*/
   font-family: 'Abril Fatface', cursive;
@@ -6,6 +23,12 @@ h1 {
 
 .navbar {
   color:white;
+}
+
+#navbar-custom {
+    color: white;
+    background-color: rgba(146, 161, 173, .1)!important;
+    border-color: rgb(139,109,76);
 }
 
 #hamburger-nav-icon:hover {
@@ -29,8 +52,8 @@ h1 {
 }
 
 #form-field {
-  /*background-color: #DECAB5;*/
-  background-image: url(../img/7.png);
+  background-color: rgb(172,184,193, .1);
+  /*background-image: url(../img/7.png);*/
   background-size: cover;
   margin-top: 10px;
 }
@@ -40,11 +63,20 @@ h1 {
 }
 
 .form-control.well {
-    background-color: rgb(163, 154, 151, .5);
-    border-color: rgb(49,49,49,.5);
+    background-color: rgb(190,200,206, .1);
+    border-color: rgb(49,49,49);
 }
+
+main#user-output.container-fluid {
+  background-color: rgb(213,220,224, .5);
+  color: black;
+  border-color: rgb(139,109,76);
+  /*border-width: medium;*/
+  margin-top: 10px;
+}
+
 label.label-dropdown {
-  color: white;
+  color: black;
 }
 
 
@@ -55,7 +87,7 @@ label.label-dropdown {
   margin-right: auto;
   /*margin-top: 10px;
   margin-bottom: 10px;*/
-  color: white;
+  color: black;
   background: none;
 }
 

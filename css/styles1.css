@@ -30,24 +30,20 @@ h1 {
 
 #form-field {
   /*background-color: #DECAB5;*/
-  background-image: url(../img/7.png);
-  background-size: cover;
+  background-image: url(../img/3.png);
   margin-top: 10px;
 }
 
 .form-control {
   text-align: left;
 }
-
 .form-control.well {
-    background-color: rgb(163, 154, 151, .5);
+    background-color: rgb(49,49,49,.5);
     border-color: rgb(49,49,49,.5);
 }
 label.label-dropdown {
   color: white;
 }
-
-
 
 .col-lg-2, .col-lg-5 {
   padding: 8px;

@@ -34,13 +34,16 @@ function filterByPlaceProperties(input, places) {
   var outplaces =[];
   places.forEach(function(place){
     for(let property in place){
-      if (place[property].includes(input) || place[property] === input){
+      if(place[property] === input){
+        outplaces = [place];
+      }else if (place[property].includes(input)){
         outplaces.push(place);
       }
     }
   });
   return outplaces;
 };
+
 
 // Place Objects (Pearl)
 var powells = new Place("Powell's City of Books",
@@ -95,9 +98,9 @@ Neighborhood.prototype.filterByPrice = function (inputPrice) {
  }
 };
 
-var places = [powells, prasad, groundKontrol, chineseGarden];
-var out = filterByPlaceProperties('morning', places);
-out.forEach(place => console.log(place.name));
+var places = [prasad, groundKontrol];
+var out = filterByPlaceProperties('$', places);
+out.forEach(place => console.log(place.price));
 
 //User logic
 $(function() {

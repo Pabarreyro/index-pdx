@@ -56,7 +56,7 @@ function filterByPlaceProperties(input, places) {
 
 // Place Objects (Pearl)
 var powells = new Place("Powell's City of Books",
-"$",
+1,
 ["shopping"],
 [],
 ["family-friendly", "casual", "book"],
@@ -64,7 +64,7 @@ var powells = new Place("Powell's City of Books",
 "img/powells.jpg");
 
 var prasad = new Place("Prasad",
-"$$",
+2,
 ["food", "cafe"],
 ["vegan", "organic", "raw", "gluten-free"],
 ["healthy", "casual"],
@@ -73,7 +73,7 @@ var prasad = new Place("Prasad",
 
 // Place Objects (Downtown)
 var chineseGarden = new Place("Lan Su Chinese Garden",
-"$$",
+2,
 ["garden", "parks"],
 [],
 ["family-friendly", "nature", "culture"],
@@ -81,7 +81,7 @@ var chineseGarden = new Place("Lan Su Chinese Garden",
 "img/chinesegarden.jpg");
 
 var groundKontrol = new Place("Ground Kontrol",
-"$$",
+2,
 ["entertainment", "bar"],
 ["gluten-free"],
 ["family-friendly", "arcade", "casual"],
@@ -89,7 +89,7 @@ var groundKontrol = new Place("Ground Kontrol",
 "img/groundkontrol.png");
 
 var departure = new Place("Departure Restaurent + Lounge",
-"$$$",
+3,
 ["bar", "food"],
 ["gluten-free", "vegan"],
 ["upscale", "views"],
@@ -123,7 +123,7 @@ $(function() {
   $("#filter-form").submit(function(event) {
     event.preventDefault();
     // debugger;
-    var inputPrice = $("#inputPrice").val();
+    var inputPrice = parseInt($("#inputPrice").val());
     var inputLocation = $("input:radio[name=location]:checked").val();
     var inputType = $("#inputType").val();
     var inputHours = $("input:radio[name=hours]:checked").val();
@@ -146,7 +146,8 @@ $(function() {
       $("#user-output").append( '<div class="well place">' +
                                   '<img class="placeImage" src="' + result.img + '" alt="an image of ' + result.name +  '" id="placeImg">' +
                                   '<h2><span class="h2-style">' + result.name + '</span>  <i data-feather="star" class="floatImg"></i><i data-feather="star" class="floatImg"></i><i data-feather="star" class="floatImg"></i></h2>' +
-                                  '<i data-feather="dollar-sign" id="dollar-sign"></i><i data-feather="dollar-sign" id="dollar-sign"></i>' +
+                                  '<i data-feather="dollar-sign" id="dollar-sign"></i>'.repeat(result.price) +
+
                                   '<p class="hrs-float"><strong>Hours: </strong></p>' +
                                   '<ul id="hours-list">' +
                                     '<li class="weeknight-hours">Sun: <span id="open-time"></span> - <span id="close-time"></span></li>' +

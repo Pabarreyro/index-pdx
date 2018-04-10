@@ -42,7 +42,6 @@ function filterByPlaceProperties(input, places) {
   return outplaces;
 };
 
-
 // Place Objects (Pearl)
 var powells = new Place("Powell's City of Books",
 "$$",
@@ -50,10 +49,6 @@ var powells = new Place("Powell's City of Books",
 [],
 ["family-friendly", "casual", "book"],
 ["morning", "afternoon", "evening"]);
-
-
-
-
 
 var prasad = new Place("Prasad",
 "$$",
@@ -91,9 +86,6 @@ pearl.places.push(powells, prasad);
 var downtown = new Neighborhood("Downtown");
 downtown.places.push(chineseGarden, groundKontrol, departure);
 
-
-
-
 Neighborhood.prototype.filterByPrice = function (inputPrice) {
   var neighborhoods = [pearl, downtown];
   for (i = 0; i < neighborhoods.length; i++) {
@@ -102,8 +94,6 @@ Neighborhood.prototype.filterByPrice = function (inputPrice) {
    }
  }
 };
-
-
 
 var places = [powells, prasad, groundKontrol, chineseGarden];
 var out = filterByPlaceProperties('morning', places);

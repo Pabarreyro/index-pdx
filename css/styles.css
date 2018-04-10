@@ -1,0 +1,60 @@
+h1 {
+  /*text-align: center;*/
+  font-family: 'Abril Fatface', cursive;
+  font-size: 47px;
+}
+
+.navbar {
+  color:white;
+}
+
+#hamburger-nav-icon:hover {
+  cursor: pointer;
+  background-color: #17a2b8;
+  border-radius: 2px;
+}
+
+.hide {
+  display: none;
+}
+
+#form-field {
+  background-color: #404347;
+}
+
+#filter-form {
+  text-align: center;
+}
+
+#submitBtn {
+  display: block;
+  margin: 0 auto;
+  padding:10px;
+  width: 200px;
+  justify-content: center;
+}
+
+.place {
+  padding-top: 14px;
+}
+
+.placeImage {
+  float:left;
+  margin-bottom: 20px;
+  margin-right: 30px;
+}
+
+.place li {
+  list-style: none;
+  display: inline-block;
+}
+
+.hrs-float {
+  float:right;
+  margin-right: 60px;
+}
+
+.weekday-hours, .weeknight-hours {
+  float:right;
+  padding-bottom: 12px;
+}

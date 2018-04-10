@@ -1,7 +1,7 @@
 // Business Logic
 
 //Constructors
-function Place(name, price, type, diet, atmosphere, hours, img) {
+function Place(name, price, type, diet, atmosphere, hours, img, openTime, closeTime, desc = "") {
   this.name = name;
   this.price = price;
   this.type = type;
@@ -9,6 +9,9 @@ function Place(name, price, type, diet, atmosphere, hours, img) {
   this.atmosphere = atmosphere;
   this.hours = hours;
   this.img = img;
+  this.openTime = openTime;
+  this.closeTime = closeTime;
+  this.desc = desc;
 }
 
 function Neighborhood(name='', places=[]) {
@@ -24,6 +27,13 @@ function filterByName(userInput, neighborhoods) {
     }
   }
 }
+
+function displayAtmosphere(array) {
+  for(var i = 0; i < array.length; i ++){
+    '<li>' + array[i] + '</li>';
+  }
+}
+
 // Neighborhood.prototype.filterByName = function (userInput) {
 //   var neighborhoods = [pearl, downtown];
 //   for(var i = 0; i < neighborhoods.length; i ++){
@@ -45,7 +55,7 @@ function filterByPlaceProperties(input, places) {
     for(let property in place){
       if(place[property] === input){
         outplaces.push(place);
-      }else if(Array.isArray(place[property]) && place[property].includes(input)){
+      } else if(Array.isArray(place[property]) && place[property].includes(input)){
         outplaces.push(place);
       }
     }
@@ -61,7 +71,11 @@ var powells = new Place("Powell's City of Books",
 [],
 ["family-friendly", "casual", "book"],
 ["morning", "afternoon", "evening"],
-"img/powells.jpg");
+"img/powells.jpg",
+"9AM",
+"11PM",
+"Powell's Books is an independent bookseller serving Portland, Oregon, since 1971. We've grown to employ over 530 people across five Portland-area stores and Powells.com, and our book inventory exceeds two million volumes. In spite of our substantial size and reach, we remain grounded by our company's core values, which have guided us through the ups and downs of the bookselling industry. Each and every employee's love of books drives us forward."
+);
 
 var prasad = new Place("Prasad",
 2,
@@ -145,23 +159,15 @@ $(function() {
     results.forEach(function(result){
       $("#user-output").append( '<div class="well place">' +
                                   '<img class="placeImage" src="' + result.img + '" alt="an image of ' + result.name +  '" id="placeImg">' +
-                                  '<h2><span class="h2-style">' + result.name + '</span>  <i data-feather="star" class="floatImg"></i><i data-feather="star" class="floatImg"></i><i data-feather="star" class="floatImg"></i></h2>' +
+                                  '<h2><span class="h2-style">' + result.name + '</span>  <i data-feather="star" class="floatImg"></i></h2>' +
                                   '<i data-feather="dollar-sign" id="dollar-sign"></i>'.repeat(result.price) +
-
                                   '<p class="hrs-float"><strong>Hours: </strong></p>' +
                                   '<ul id="hours-list">' +
-                                    '<li class="weeknight-hours">Sun: <span id="open-time"></span> - <span id="close-time"></span></li>' +
-                                    '<li class="weeknight-hours">Sat: <span id="open-time"></span> - <span id="close-time"></span></li>' +
-                                    '<li class="weekday-hours">Mon-Fri: <span id="open-time"></span> - <span id="close-time"></span></li>' +
+                                    '<li class="weeknight-hours">' + result.openTime + '<span id="open-time"></span> - <span id="close-time">' + result.closeTime + '</span></li>' +
                                   '</ul>' +
-                                  '<p>Powell books Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>' +
-
-                                  '<p>Powell books Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>' +
+                                  '<p>' + result.desc + '</p>' +
                                   '<ul id="features-list">' +
-                                    '<li>Book</li>' +
-                                    '<li>Casual</li>' +
-                                    '<li>Family-friendly</li>' +
-                                    '<li>Cafe</li>' +
+                                    result.atmosphere.join(", ") +
                                   '</ul>' +
                                   '<script>' +
                                     'feather.replace()' +

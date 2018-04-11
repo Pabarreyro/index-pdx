@@ -21,58 +21,69 @@
         <form class="hide" id="filter-form">
           <div class="form-row">
             <div class="form-control well col-lg-2">
-              <label for="price" class="label-dropdown">Price</label>
-              <select class="form-control">
-                <option>$</option>
-                <option>$$</option>
-                <option>$$$</option>
-              </select>
-            </div>
-            <div class="form-control well col-lg-2">
               <label for="location" class="label-dropdown">Location</label>
               <div class="radio">
                 <label>
-                  <input type="radio" name="location" value="NW">
-                  NW
+                  <input type="radio" name="location" value="Pearl">
+                  Pearl District
                 </label>
               </div>
               <div class="radio">
                 <label>
-                  <input type="radio" name="location" value="SW">
-                  SW
+                  <input type="radio" name="location" value="Downtown">
+                  Downtown
                 </label>
               </div>
             </div>
             <div class="form-control well col-lg-2">
+              <label for="price" class="label-dropdown">Price</label>
+              <select class="form-control" id="inputPrice">
+                <option value="1">$</option>
+                <option value="2">$$</option>
+                <option value="3">$$$</option>
+              </select>
+            </div>
+            <div class="form-control well col-lg-2">
               <label for="type" class="label-dropdown">Type</label>
-              <select class="form-control">
-                <option>Music</option>
-                <option>Food</option>
+              <select class="form-control" id="inputType">
+                <option value="bar">Bar</option>
+                <option value="cafe">Cafe</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="food">Food</option>
+                <option value="garden">Garden</option>
+                <option value="parks">Parks</option>
+                <option value="shopping">Shopping</option>
               </select>
             </div>
             <div class="form-control well col-lg-2">
               <label for="hours" class="label-dropdown">Hours</label>
               <div class="radio">
                 <label>
-                  <input type="radio" name="hours" value="Early Morning">
+                  <input type="radio" name="hours" value="early-morning">
                   Early Morning
                 </label>
               </div>
               <div class="radio">
                 <label>
-                  <input type="radio" name="hours" value="Morning">
+                  <input type="radio" name="hours" value="morning">
                   Morning
                 </label>
               </div>
               <div class="radio">
                 <label>
-                  <input type="radio" name="hours" value="Afternoon">
+                  <input type="radio" name="hours" value="afternoon">
                   Afternoon
                 </label>
               </div>
               <div class="radio">
                 <label>
-                  <input type="radio" name="hours" value="Late Night">
+                  <input type="radio" name="hours" value="evening">
+                  Evening
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="hours" value="late-night">
                   Late Night
                 </label>
               </div>
@@ -80,10 +91,11 @@
             <div class="form-control well col-lg-2">
               <label class="label-dropdown" class="label-dropdown">Dietary Restrictions</label>
               <br>
-              <input type="checkbox" name="diet" value="Vegan"> Vegan<br>
-              <input type="checkbox" name="diet" value="Gluten Free"> Gluten Free<br>
-              <input type="checkbox" name="diet" value="Raw"> Raw<br>
-              <input type="checkbox" name="diet" value="Organic"> Organic<br>
+              <input type="checkbox" name="diet" value="gluten-free"> Gluten Free<br>
+              <input type="checkbox" name="diet" value="organic"> Organic<br>
+              <input type="checkbox" name="diet" value="vegan"> Vegan<br>
+              <input type="checkbox" name="diet" value="raw"> Raw<br>
+
             </div>
           </div>
           <div id="submitBtn">
@@ -92,8 +104,8 @@
       </form>
     </div>
       <main class="container-fluid" id="user-output">
-        <div class="well place">
-          <img class="placeImage" src="img/powells.jpeg" alt="an image of a bookstore">
+        <!-- <div class="well place">
+          <img class="placeImage" src="img/powells.jpg" alt="an image of a bookstore">
           <h2><span class="h2-style">Powell's City of Books</span>  <i data-feather="star" class="floatImg"></i><i data-feather="star" class="floatImg"></i><i data-feather="star" class="floatImg"></i></h2>
           <i data-feather="dollar-sign" id="dollar-sign"></i><i data-feather="dollar-sign" id="dollar-sign"></i>
           <p class="hrs-float"><strong>Hours: </strong></p>
@@ -116,7 +128,22 @@
           </script>
         <hr>
         </div>
+        <div class="form-control well col-lg-12">
+            <div class="well" id="form-field">
+
+              <br><br><a href="https://www.instagram.com/"><i data-feather="instagram" id="instagram"></a></i>
+              <a href="https://www.facebook.com/"><i data-feather="facebook" id="facebook"></a></i>
+              <a href="https://www.twitter.com/"><i data-feather="twitter" id="twitter"></a></i>
+              <a href="https://www.google.com/gmail/"><i data-feather="mail" id="mail"></a></i>
+
+
+            </div>
+          </div>
+        </div>
       </main>
     </div>
+    <script>
+     feather.replace()
+   </script>
   </body>
 </html>

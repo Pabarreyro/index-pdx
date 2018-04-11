@@ -92,7 +92,7 @@ var prasad = new Place("Prasad",
 // Place Objects (Old Town)
 var chineseGarden = new Place("Lan Su Chinese Garden",
 2,
-["garden", "parks"],
+["entertainment"],
 [],
 ["family-friendly", "nature", "culture"],
 ["morning", "afternoon"],
@@ -184,13 +184,46 @@ var theOriginal = new Place("The Original Dinerant",
   "10PM",
   "The Original is the perfect destination for unexpected all-day Portland dining. Our inspired menu of eclectic American cuisine takes on regional favorites and modifies them with local and seasonal ingredients resulting in flavors and textures unique to the Pacific Northwest. Unwind at our candle-lit bar for that much deserved post-prandial nightcap. At the Original, we honor the past as we listen in on the pulse of Portland’s adventurous and evolving tastes.");
 
+var saucebox = new Place("Saucebox",
+  2,
+  ["food", "bars"],
+  ["vegan", "gluten-free"],
+  ["chic", "upscale"],
+  ["evening", "late-night"],
+  "img/saucebox.jpg",
+  "4PM",
+  "2AM",
+  "Established in 1995, saucebox has maintained its reputation in the city as the place for the finest in pan-asian and pacific island cuisine with its insider vibe and unique presence. Unforgettable dishes and innovative cocktails have given saucebox national notoriety in The New York Times, Bon Appetit Magazine, Travel & Leisure and The Wall Street Journal – but it’s local attention and accolades like being honored as “Restaurant of the Year” In 1998 by the Oregonian that make saucebox a landmark of Portland restaurant and lounge scene.");
+
+var stumptown = new Place("Stumptown Coffee Roasters",
+  1,
+  ["cafe"],
+  ["vegan", "organic"],
+  ["family-friendly", "casual"],
+  ["early-morning", "morning", "afternoon"],
+  "img/stumptown.jpg",
+  "6AM",
+  "7PM",
+  "Stumptown Coffee Roasters is a coffee roaster and retailer based in Portland, Oregon, United States. The chain's flagship café and roastery opened in 1999.");
+
+var brunchBox = new Place("Brunch Box",
+  1,
+  ["food"],
+  [],
+  ["casual", "family-friendly", "limited seating"],
+  ["morning", "afternoon", "evening"],
+  "img/brunchbox.jpg",
+  "8AM",
+  "10PM",
+  "Small, casual spot for counter-serve breakfast, burgers & sandwiches in simple cafe environs.");
+
 
 // Neighborhood objects
 var pearl = new Neighborhood("Pearl");
 pearl.places.push(powells, prasad);
 
 var downtown = new Neighborhood("Downtown");
-downtown.places.push(departure, theOriginal, chineseGarden, groundKontrol, oldTownPizza, roselandTheater, hobos);
+downtown.places.push(departure, theOriginal, chineseGarden, groundKontrol, oldTownPizza, roselandTheater, hobos, saucebox, stumptown, brunchBox);
 
 Neighborhood.prototype.filterByPrice = function (inputPrice) {
   var neighborhoods = [pearl, downtown];

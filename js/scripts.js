@@ -140,14 +140,24 @@ Neighborhood.prototype.filterByPrice = function (inputPrice) {
  }
 };
 
-
 // var places = [chineseGarden, groundKontrol, departure];
 // var out = filterByPlaceProperties('$', places);
 // out.forEach(place => console.log(place));
 
+function time(){ //function to fluctuate the css stylesheet
+  var time = new Date();
+  var hourNow = time.getHours();
+  console.log(hourNow);
 
+  if (hourNow > 18) {
+    $("head").append('<link href="css/night.css" rel="stylesheet" type="text/css">');
+  } else {
+    $("head").append('<link href="css/coolearth.css" rel="stylesheet" type="text/css">');
+  }
+}
 //User logic
 $(function() {
+  time();
   $("#filter-form").submit(function(event) {
     event.preventDefault();
     // debugger;
@@ -161,17 +171,6 @@ $(function() {
       // console.log(inputDiet);
       // $("").append(inputDiet + "<br>");
     });
-    /// js new changes
-    function addCSS(fileName) {
-
-      var head = document.head;
-      var time = new Date();
-      var hourNow = time.getHours();
-      var morningImg = ;
-      var nightImg =
-
-    }
-
 
 
     var neighborhoods = [pearl, downtown];

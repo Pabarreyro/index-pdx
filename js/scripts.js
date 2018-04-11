@@ -176,12 +176,12 @@ var radishUnderground = new Place("Radish Underground",
 3,
 ["shopping"],
 [],
-["family-friendly", "retail", "casual", "shop", "clothing", "local designers"],
+["family-friendly", "retail", "casual", "shop", "clothing", "local designers", "boutique"],
 ["morning", "afternoon", "evening"],
 "img/radish.png",
 "11AM",
 "6PM",
-"Union Way, a modern arcade connecting downtown Portland’s West End with the Pearl District, opened for business in summer 2013. Converted from two former nightclubs, the corridor packs various businesses into a covered galleria that links Powell’s City of Books to the Ace Hotel.");
+"Radish Underground is a woman's boutique featuring independent fashion designers from Portland, Or and around the world located in Downtown Portland's West End.");
 
 // Neighborhood objects
 var pearl = new Neighborhood("Pearl");

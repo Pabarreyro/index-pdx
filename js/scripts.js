@@ -88,6 +88,7 @@ var prasad = new Place("Prasad",
 "8PM",
 "Harlow breaks from the vegan mold (though remains vegetarian) mostly during breakfast, with a menu offering scrambles alongside rice or quinoa; huevos rancheros with housemade tortillas; and lemon poppy quinoa pancakes with a choice of vegan or dairy butter. (Also available for breakfast: granola, classic oatmeal, and maple-roasted veggies served with polenta and eggs.) Lunch expands Prasad's cafe menu of hot and raw soups, salads, and bowls (including the 'Mighty Bowl,' which is offered on a donation basis) with dishes like a vegan mac and cheese; dinner includes three raw dishes, including a raw veggie burger, and barbecue tempeh. In an attempt to make drinking a healthier pursuit, the bar will serve fresh juice-based cocktails, like the 'Dorian's Tonic' (featuring gin, cucumber, apple, basil, and cilantro), as well as a bourbon-heavy spirits menu.");
 
+
 // Place Objects (Old Town)
 var chineseGarden = new Place("Lan Su Chinese Garden",
 2,
@@ -101,7 +102,7 @@ var chineseGarden = new Place("Lan Su Chinese Garden",
 "A year-round wonder, the Lan Su Chinese Garden is an authentic Ming Dynasty style garden, built by Suzhou artisans, that takes up an entire block of the city’s historic Chinatown district. Since the garden’s opening in 2000, its covered walkways, bridges, open colonnades, pavilions and richly planted landscape framing the man-made Zither Lake have created an urban oasis of tranquil beauty and harmony. It’s an inspiring, serene setting for meditation, quiet thought and tea served at The Tao of Tea in the Tower of Cosmic Reflections, as well as public tours of the grounds led by expert horticulturalists.");
 
 var groundKontrol = new Place("Ground Kontrol",
-2,
+1,
 ["entertainment", "bar"],
 ["gluten-free"],
 ["family-friendly", "arcade", "casual"],
@@ -123,7 +124,7 @@ var oldTownPizza = new Place("Old Town Pizza",
   "Framed in the heart of the Portland, Oregon, Old Town emulates the spirit of our region with every beer we brew and every pizza we make. Inspired by the untamed attitude and the support of our driven community, you may consider this our love letter to the Pacific Northwest.");
 
 var roselandTheater = new Place("Roseland Theater",
-  2,
+  3,
   ["entertainment"],
   [],
   ["casual", "music"],
@@ -133,27 +134,29 @@ var roselandTheater = new Place("Roseland Theater",
   "varies",
   "Managed by Double Tee Concerts, The Roseland Theater in Portland is one of the premier showcase concert venues in America.");
 
-var temp = new Place(name,
-  price,
-  type,
-  diet,
-  atmosphere,
-  hours,
-  img,
-  openTime,
-  closeTime,
-  desc = "");
+var hobos = new Place("Hobo's Restaurant & Lounge",
+  2,
+  ["food", "bar"],
+  [],
+  ["lounge", "gay-friendly"],
+  ["afternoon", "evening", "late-night"],
+  "img/hobos.jpg",
+  "4PM",
+  "2AM",
+  "Hobo's restaurant offers fine dining in a comfortable lounge atmosphere. Located in Portland, Oregon, Hobo's has been a part of the Northwest's dining and lounge experience for over twenty five years.");
 
-var temp = new Place(name,
-  price,
-  type,
-  diet,
-  atmosphere,
-  hours,
-  img,
-  openTime,
-  closeTime,
-  desc = "");
+
+
+// var temp = new Place(name,
+//   price,
+//   type,
+//   diet,
+//   atmosphere,
+//   hours,
+//   img,
+//   openTime,
+//   closeTime,
+//   desc = "");
 
 
 // Neighborhood Downtown
@@ -170,15 +173,24 @@ var departure = new Place("Departure Restaurent + Lounge",
 "In a space whose design is as daring as its cuisine, Departure is Portland’s sky-high retreat for both quick bites and leisurely dining. Step beyond its iconic façade into a world of cutting-edge interiors that seamlessly blend Portland’s pioneering past with its progressive future. With a relaxed, refined atmosphere, Departure is the ultimate location for encounters of every taste and style."
 );
 
+var theOriginal = new Place("The Original Dinerant",
+  2,
+  ["food"],
+  [],
+  ["family-friendly", "casual"],
+  ["early-morning", "morning", "afternoon", "evening"],
+  "img/theoriginal.jpg",
+  "6AM",
+  "10PM",
+  "The Original is the perfect destination for unexpected all-day Portland dining. Our inspired menu of eclectic American cuisine takes on regional favorites and modifies them with local and seasonal ingredients resulting in flavors and textures unique to the Pacific Northwest. Unwind at our candle-lit bar for that much deserved post-prandial nightcap. At the Original, we honor the past as we listen in on the pulse of Portland’s adventurous and evolving tastes.");
+
+
 // Neighborhood objects
 var pearl = new Neighborhood("Pearl");
 pearl.places.push(powells, prasad);
 
 var downtown = new Neighborhood("Downtown");
-downtown.places.push(departure);
-
-var downtown = new Neighborhood("Old Town");
-downtown.places.push(chineseGarden, groundKontrol, oldTownPizza, roselandTheater);
+downtown.places.push(departure, theOriginal, chineseGarden, groundKontrol, oldTownPizza, roselandTheater, hobos);
 
 Neighborhood.prototype.filterByPrice = function (inputPrice) {
   var neighborhoods = [pearl, downtown];
@@ -217,7 +229,7 @@ $(function() {
     // console.log(outputNeighborhood);
     var results = filterByPlaceProperties(inputPrice, outputNeighborhood.places);
     // results = filterByPlaceProperties(inputType, results);
-    console.log(results);
+    // console.log(results);
 
     results.forEach(function(result){
       $("#user-output").append( '<div class="well place">' +

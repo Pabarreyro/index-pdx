@@ -5,6 +5,10 @@ h1 {
 
 }
 
+.place img {
+  height: 180px;
+}
+
 .navbar {
   color:#f27107;
   text-shadow: 2px 2px 4px #160b01;

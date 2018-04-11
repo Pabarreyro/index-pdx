@@ -161,6 +161,18 @@ $(function() {
       // console.log(inputDiet);
       // $("").append(inputDiet + "<br>");
     });
+    /// js new changes
+    function addCSS(fileName) {
+
+      var head = document.head;
+      var time = new Date();
+      var hourNow = time.getHours();
+      var morningImg = ;
+      var nightImg =
+
+    }
+
+
 
     var neighborhoods = [pearl, downtown];
 

@@ -89,7 +89,7 @@ var prasad = new Place("Prasad",
 "Harlow breaks from the vegan mold (though remains vegetarian) mostly during breakfast, with a menu offering scrambles alongside rice or quinoa; huevos rancheros with housemade tortillas; and lemon poppy quinoa pancakes with a choice of vegan or dairy butter. (Also available for breakfast: granola, classic oatmeal, and maple-roasted veggies served with polenta and eggs.) Lunch expands Prasad's cafe menu of hot and raw soups, salads, and bowls (including the 'Mighty Bowl,' which is offered on a donation basis) with dishes like a vegan mac and cheese; dinner includes three raw dishes, including a raw veggie burger, and barbecue tempeh. In an attempt to make drinking a healthier pursuit, the bar will serve fresh juice-based cocktails, like the 'Dorian's Tonic' (featuring gin, cucumber, apple, basil, and cilantro), as well as a bourbon-heavy spirits menu.");
 
 
-// Place Objects (Old Town)
+// Place Objects (Downtown)
 var chineseGarden = new Place("Lan Su Chinese Garden",
 2,
 ["entertainment"],
@@ -145,21 +145,6 @@ var hobos = new Place("Hobo's Restaurant & Lounge",
   "2AM",
   "Hobo's restaurant offers fine dining in a comfortable lounge atmosphere. Located in Portland, Oregon, Hobo's has been a part of the Northwest's dining and lounge experience for over twenty five years.");
 
-
-
-// var temp = new Place(name,
-//   price,
-//   type,
-//   diet,
-//   atmosphere,
-//   hours,
-//   img,
-//   openTime,
-//   closeTime,
-//   desc = "");
-
-
-// Neighborhood Downtown
 var departure = new Place("Departure Restaurent + Lounge",
 3,
 ["bar", "food"],

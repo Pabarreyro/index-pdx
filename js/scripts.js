@@ -69,7 +69,7 @@ var powells = new Place("Powell's City of Books",
 1,
 ["shopping"],
 [],
-["family-friendly", "casual", "book"],
+["family-friendly", "casual", "book"], //coming up with
 ["morning", "afternoon", "evening"],
 "img/powells.jpg",
 "9AM",
@@ -115,7 +115,7 @@ var departure = new Place("Departure Restaurent + Lounge",
 3,
 ["bar", "food"],
 ["gluten-free", "vegan"],
-["upscale", "views"],
+["upscale", "views", "casual"],
 ["evening", "late-night"],
 "img/departure.jpg",
 "4PM",
@@ -128,7 +128,7 @@ var livingRoomTheaters = new Place("Living Room Theaters",
 2,
 ["food", "entertainment"],
 ["gluten-free"],
-["family-friendly", "family-friendly", "casual"],
+["family-friendly", "casual", "theater", "date night", "indie films", "food & wine"],
 ["afternoon", "evening", "late-night"],
 "img/living-room-theater.png",
 "12PM",
@@ -138,23 +138,57 @@ var livingRoomTheaters = new Place("Living Room Theaters",
 "Welcome to the new evolution of cinema - Living Room® Theaters -- the sophisticated yet superbly comfortable environment that combines a European style café and lounge with a relaxing place to see wonderful movies. Cinema has come to its senses.");
 
 var clubPivata = new Place("Club Privata",
-5,
-["bar", "food", "entertainment", "casual"],
+3,
+["food", "entertainment", "bar"],
 ["gluten-free", "vegan"],
-["upscale", "views", "casual"],
+["upscale", "views", "dancing", "club", "exotic", "private"],
 ["evening", "late-night"],
-"img/departure.jpg",   //change img
+"img/privata.jpg",   //change img
 "8PM",
 "2AM",
-"Welcome to Humptown! Willamette Week's new sex advice column written by Portland sex educator and intimacy coach, Stella Harris. Ever had a question about sex and relationships but didn't know who to ask? Maybe you've wondered how to ask your partner for butt stuff, or an open relationship, or how to finally admit that actually, you haven't been having orgasms. Maybe you've got a fetish you've never told anyone about, but you're dying to explore. Diapers? Watersports? Latex? This is the place for you. Everything from kink & BDSM to polyamory, group sex, threesomes, swinging, & straight up vanilla lovin'—Stella has the answers. Not only that, but Humptown will give you specific local resources whenever possible to help facilitate the sex life of your dreams."
-);
+"Welcome to Humptown! Willamette Week's new sex advice column written by Portland sex educator and intimacy coach, Stella Harris. Ever had a question about sex and relationships but didn't know who to ask? Maybe you've wondered how to ask your partner for butt stuff, or an open relationship, or how to finally admit that actually, you haven't been having orgasms. Maybe you've got a fetish you've never told anyone about, but you're dying to explore. Diapers? Watersports? Latex? This is the place for you. Everything from kink & BDSM to polyamory, group sex, threesomes, swinging, & straight up vanilla lovin'—Stella has the answers. Not only that, but Humptown will give you specific local resources whenever possible to help facilitate the sex life of your dreams.");
+
+var pioneerPlace = new Place("Pioneer Place",
+3,
+["shopping", "food", "cafe", "entertainment"],
+["gluten-free"],
+["family-friendly", "casual", "food", "shopping", "clothing", "high end"],
+["morning", "afternoon", "evening"],
+"img/pioneer.png",
+"10AM",
+"8PM",
+"Where downtown Portland comes to life. Downtown Portland is buzzing with activity. And it's not just the coffee. There is an energy here that charges every moment with fun and excitement. In the heart of downtown, you'll find Pioneer Place – four city blocks filled with shopping, dining and entertainment. Add tax-free shopping, and you're certain to have the time of your life.");
+
+var unionWay = new Place("Union Way",
+3,
+["shopping"],
+[],
+["family-friendly", "local designers", "retail", "clothing", "shop", "food"],
+["morning", "afternoon", "evening"],
+"img/union.png",
+"11AM",
+"7PM",
+"Union Way, a modern arcade connecting downtown Portland’s West End with the Pearl District, opened for business in summer 2013. Converted from two former nightclubs, the corridor packs various businesses into a covered galleria that links Powell’s City of Books to the Ace Hotel."
++ "</br>" +
+"With nine shops ranging in size from 187 to 1,500 square feet, the bright alleyway, lit with skylights, is the perfect bridge to connect the city’s newest shopping neighborhood, the West End, to the Pearl District, with its many boutiques and galleries. Danner, the iconic Oregon boot brand, has opened its first ever stand-alone retail shop in the alley, alongside high-end outfitter Will Leather Goods, another established Oregon company.");
+
+var radishUnderground = new Place("Radish Underground",
+3,
+["shopping"],
+[],
+["family-friendly", "retail", "casual", "shop", "clothing", "local designers"],
+["morning", "afternoon", "evening"],
+"img/radish.png",
+"11AM",
+"6PM",
+"Union Way, a modern arcade connecting downtown Portland’s West End with the Pearl District, opened for business in summer 2013. Converted from two former nightclubs, the corridor packs various businesses into a covered galleria that links Powell’s City of Books to the Ace Hotel.");
 
 // Neighborhood objects
 var pearl = new Neighborhood("Pearl");
 pearl.places.push(powells, prasad);
 
 var downtown = new Neighborhood("Downtown");
-downtown.places.push(chineseGarden, groundKontrol, departure, livingRoomTheaters, clubPivata);
+downtown.places.push(chineseGarden, groundKontrol, departure, livingRoomTheaters, clubPivata, pioneerPlace, unionWay, radishUnderground);
 
 Neighborhood.prototype.filterByPrice = function (inputPrice) {
   var neighborhoods = [pearl, downtown];

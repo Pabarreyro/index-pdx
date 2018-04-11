@@ -83,7 +83,10 @@ var prasad = new Place("Prasad",
 ["vegan", "organic", "raw", "gluten-free"],
 ["healthy", "casual"],
 ["early-morning", "afternoon"],
-"img/prasad.jpg");
+"img/prasad.jpg",
+"7:30AM",
+"8PM",
+"Harlow breaks from the vegan mold (though remains vegetarian) mostly during breakfast, with a menu offering scrambles alongside rice or quinoa; huevos rancheros with housemade tortillas; and lemon poppy quinoa pancakes with a choice of vegan or dairy butter. (Also available for breakfast: granola, classic oatmeal, and maple-roasted veggies served with polenta and eggs.) Lunch expands Prasad's cafe menu of hot and raw soups, salads, and bowls (including the 'Mighty Bowl,' which is offered on a donation basis) with dishes like a vegan mac and cheese; dinner includes three raw dishes, including a raw veggie burger, and barbecue tempeh. In an attempt to make drinking a healthier pursuit, the bar will serve fresh juice-based cocktails, like the 'Dorian's Tonic' (featuring gin, cucumber, apple, basil, and cilantro), as well as a bourbon-heavy spirits menu.");
 
 // Place Objects (Downtown)
 var chineseGarden = new Place("Lan Su Chinese Garden",
@@ -92,7 +95,10 @@ var chineseGarden = new Place("Lan Su Chinese Garden",
 [],
 ["family-friendly", "nature", "culture"],
 ["morning", "afternoon"],
-"img/chinesegarden.jpg");
+"img/chinesegarden.jpg",
+"10AM",
+"7PM",
+"A year-round wonder, the Lan Su Chinese Garden is an authentic Ming Dynasty style garden, built by Suzhou artisans, that takes up an entire block of the city’s historic Chinatown district. Since the garden’s opening in 2000, its covered walkways, bridges, open colonnades, pavilions and richly planted landscape framing the man-made Zither Lake have created an urban oasis of tranquil beauty and harmony. It’s an inspiring, serene setting for meditation, quiet thought and tea served at The Tao of Tea in the Tower of Cosmic Reflections, as well as public tours of the grounds led by expert horticulturalists.");
 
 var groundKontrol = new Place("Ground Kontrol",
 2,
@@ -100,7 +106,10 @@ var groundKontrol = new Place("Ground Kontrol",
 ["gluten-free"],
 ["family-friendly", "arcade", "casual"],
 ["afternoon", "evening", "late-night"],
-"img/groundkontrol.png");
+"img/groundkontrol.png",
+"12AM",
+"2:30AM",
+"Ground Kontrol is the West Coast’s premier classic arcade. We preserve and celebrate video gaming’s “golden age” by operating over 60 classic video games and 27 pinball machines, feature a full-service bar after 5PM, host DJs, comedy shows, trivia nights, game tournaments, and Rock Band karaoke, and are available for public and private event rentals.");
 
 var departure = new Place("Departure Restaurent + Lounge",
 3,
@@ -108,7 +117,12 @@ var departure = new Place("Departure Restaurent + Lounge",
 ["gluten-free", "vegan"],
 ["upscale", "views"],
 ["evening", "late-night"],
-"img/departure.jpg");
+"img/departure.jpg",
+"4PM",
+"11PM",
+"Floating atop the landmark Meier & Frank Building, Departure’s ambitious menu captivates diners with its masterful remix of authentic coastal cuisines. From street food-styled starters to meal-sized classics, rice and noodle specialties to market-fresh sushi, Departure embraces the bounty of the Pacific Northwest to deliver the fiery flavors of the Far east. Whether steamed or stir-fried, smoked or sautéed, each dish leads diners to another stage along Departure’s culinary adventure." + '<br>' +
+"In a space whose design is as daring as its cuisine, Departure is Portland’s sky-high retreat for both quick bites and leisurely dining. Step beyond its iconic façade into a world of cutting-edge interiors that seamlessly blend Portland’s pioneering past with its progressive future. With a relaxed, refined atmosphere, Departure is the ultimate location for encounters of every taste and style."
+);
 
 // Neighborhood objects
 var pearl = new Neighborhood("Pearl");

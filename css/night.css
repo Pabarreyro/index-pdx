@@ -1,8 +1,17 @@
 h1 {
-  /*text-align: center;*/
   font-family: 'Abril Fatface', cursive;
   font-size: 47px;
 }
+
+h2 {
+  text-align: center;
+}
+
+#pintro {
+margin-left: 20%;
+margin-right: 20%;
+}
+
 html, body {
   min-height: 100%;
 }
@@ -24,6 +33,9 @@ body {
 #navbar-custom {
     color: white;
     background-color: rgb(0,0,0, .5) !important;
+    max-width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 span.navbar-toggler-icon#hamburger-nav-icon {
@@ -51,12 +63,13 @@ span.navbar-toggler-icon#hamburger-nav-icon {
 }
 
 #form-field {
-  /* background-color: black; */
-  /* background-image: url(../img/7.png); */
   background-color: rgb(0,0,0, .5) !important;
   background-size: cover;
   margin-top: 10px;
   margin-bottom: 10px;
+  max-width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .form-control {
@@ -67,11 +80,12 @@ span.navbar-toggler-icon#hamburger-nav-icon {
     border: solid 1px rgb(139,109,76);
 }
 
-main#user-output.container-fluid {
-  background-color: rgb(0,0,0, .7);
+main.container-fluid#user-output {
+  background-color: rgb(0,0,0, .5);
   color: white;
   border-color: rgb(139,109,76);
   border-width: medium;
+  max-width: 90%;
 }
 
 label.label-dropdown {
@@ -154,11 +168,36 @@ li.nav-bar-float {
   padding-bottom: 12px;
 }
 
-/*.form-row {
-  border-radius: 0 0 2px 2px;
-}*/
-
 .form-row {
   width: 100%;
   margin: 0 auto;
 }
+
+img.carousel-img {
+  width: auto;
+max-height: 400px;
+  display: block;
+  padding-bottom: 5%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media only screen and (max-width: 576px) {
+   .carousel .carousel-inner .item{
+      height: 100px // feel free to add the height you want to use but it's going to change the ratio of your image
+   }
+}
+
+/*Not working, need to figure out*/
+@media (max-width: @screen-sm-min) {
+  body {
+      background-image: url(../img/portland.jpg);
+      font-size: 10rem;
+    }
+ }
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) { ... }
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) { ... }

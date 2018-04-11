@@ -69,7 +69,7 @@ var powells = new Place("Powell's City of Books",
 1,
 ["shopping"],
 [],
-["family-friendly", "casual", "book"],
+["family-friendly", "casual", "book"], //coming up with
 ["morning", "afternoon", "evening"],
 "img/powells.jpg",
 "9AM",
@@ -115,7 +115,7 @@ var departure = new Place("Departure Restaurent + Lounge",
 3,
 ["bar", "food"],
 ["gluten-free", "vegan"],
-["upscale", "views"],
+["upscale", "views", "casual"],
 ["evening", "late-night"],
 "img/departure.jpg",
 "4PM",
@@ -124,12 +124,71 @@ var departure = new Place("Departure Restaurent + Lounge",
 "In a space whose design is as daring as its cuisine, Departure is Portland’s sky-high retreat for both quick bites and leisurely dining. Step beyond its iconic façade into a world of cutting-edge interiors that seamlessly blend Portland’s pioneering past with its progressive future. With a relaxed, refined atmosphere, Departure is the ultimate location for encounters of every taste and style."
 );
 
+var livingRoomTheaters = new Place("Living Room Theaters",
+2,
+["food", "entertainment"],
+["gluten-free"],
+["family-friendly", "casual", "theater", "date night", "indie films", "food & wine"],
+["afternoon", "evening", "late-night"],
+"img/living-room-theater.png",
+"12PM",
+"10PM",
+"Living Room® Theaters is a visionary new concept created by longtime filmmakers. We set out to reinvent the way films are viewed and distributed. And to change everything we didn't like about conventional and art house movie theaters - from the film selection to the lobby ambiance, food, seating and service."
++ "</br>" +
+"Welcome to the new evolution of cinema - Living Room® Theaters -- the sophisticated yet superbly comfortable environment that combines a European style café and lounge with a relaxing place to see wonderful movies. Cinema has come to its senses.");
+
+var clubPivata = new Place("Club Privata",
+3,
+["food", "entertainment", "bar"],
+["gluten-free", "vegan"],
+["upscale", "views", "dancing", "club", "exotic", "private"],
+["evening", "late-night"],
+"img/privata.jpg",
+"8PM",
+"2AM",
+"Welcome to Humptown! Willamette Week's new sex advice column written by Portland sex educator and intimacy coach, Stella Harris. Ever had a question about sex and relationships but didn't know who to ask? Maybe you've wondered how to ask your partner for butt stuff, or an open relationship, or how to finally admit that actually, you haven't been having orgasms. Maybe you've got a fetish you've never told anyone about, but you're dying to explore. Diapers? Watersports? Latex? This is the place for you. Everything from kink & BDSM to polyamory, group sex, threesomes, swinging, & straight up vanilla lovin'—Stella has the answers. Not only that, but Humptown will give you specific local resources whenever possible to help facilitate the sex life of your dreams.");
+
+var pioneerPlace = new Place("Pioneer Place",
+3,
+["shopping", "food", "cafe", "entertainment"],
+["gluten-free"],
+["family-friendly", "casual", "food", "shopping", "clothing", "high end"],
+["morning", "afternoon", "evening"],
+"img/pioneer.png",
+"10AM",
+"8PM",
+"Where downtown Portland comes to life. Downtown Portland is buzzing with activity. And it's not just the coffee. There is an energy here that charges every moment with fun and excitement. In the heart of downtown, you'll find Pioneer Place – four city blocks filled with shopping, dining and entertainment. Add tax-free shopping, and you're certain to have the time of your life.");
+
+var unionWay = new Place("Union Way",
+3,
+["shopping"],
+[],
+["family-friendly", "local designers", "retail", "clothing", "shop", "food"],
+["morning", "afternoon", "evening"],
+"img/union.png",
+"11AM",
+"7PM",
+"Union Way, a modern arcade connecting downtown Portland’s West End with the Pearl District, opened for business in summer 2013. Converted from two former nightclubs, the corridor packs various businesses into a covered galleria that links Powell’s City of Books to the Ace Hotel."
++ "</br>" +
+"With nine shops ranging in size from 187 to 1,500 square feet, the bright alleyway, lit with skylights, is the perfect bridge to connect the city’s newest shopping neighborhood, the West End, to the Pearl District, with its many boutiques and galleries. Danner, the iconic Oregon boot brand, has opened its first ever stand-alone retail shop in the alley, alongside high-end outfitter Will Leather Goods, another established Oregon company.");
+
+var radishUnderground = new Place("Radish Underground",
+3,
+["shopping"],
+[],
+["family-friendly", "retail", "casual", "shop", "clothing", "local designers", "boutique"],
+["morning", "afternoon", "evening"],
+"img/radish.png",
+"11AM",
+"6PM",
+"Radish Underground is a woman's boutique featuring independent fashion designers from Portland, Or and around the world located in Downtown Portland's West End.");
+
 // Neighborhood objects
 var pearl = new Neighborhood("Pearl");
 pearl.places.push(powells, prasad);
 
 var downtown = new Neighborhood("Downtown");
-downtown.places.push(chineseGarden, groundKontrol, departure);
+downtown.places.push(chineseGarden, groundKontrol, departure, livingRoomTheaters, clubPivata, pioneerPlace, unionWay, radishUnderground);
 
 Neighborhood.prototype.filterByPrice = function (inputPrice) {
   var neighborhoods = [pearl, downtown];
@@ -141,13 +200,19 @@ Neighborhood.prototype.filterByPrice = function (inputPrice) {
 };
 
 
-// var places = [chineseGarden, groundKontrol, departure];
-// var out = filterByPlaceProperties('$', places);
-// out.forEach(place => console.log(place));
+function time(){ //fluctuate the css stylesheet
+  var time = new Date();
+  var hourNow = time.getHours();
 
-
+  if (hourNow > 18) {
+    $("head").append('<link href="css/night.css" rel="stylesheet" type="text/css">');
+  } else {
+    $("head").append('<link href="css/coolearth.css" rel="stylesheet" type="text/css">');
+  }
+}
 //User logic
 $(function() {
+  time();
   $("#filter-form").submit(function(event) {
     event.preventDefault();
     // debugger;
@@ -161,6 +226,7 @@ $(function() {
       // console.log(inputDiet);
       // $("").append(inputDiet + "<br>");
     });
+
 
     var neighborhoods = [pearl, downtown];
 

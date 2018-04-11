@@ -143,7 +143,7 @@ var clubPivata = new Place("Club Privata",
 ["gluten-free", "vegan"],
 ["upscale", "views", "dancing", "club", "exotic", "private"],
 ["evening", "late-night"],
-"img/privata.jpg",   //change img
+"img/privata.jpg",
 "8PM",
 "2AM",
 "Welcome to Humptown! Willamette Week's new sex advice column written by Portland sex educator and intimacy coach, Stella Harris. Ever had a question about sex and relationships but didn't know who to ask? Maybe you've wondered how to ask your partner for butt stuff, or an open relationship, or how to finally admit that actually, you haven't been having orgasms. Maybe you've got a fetish you've never told anyone about, but you're dying to explore. Diapers? Watersports? Latex? This is the place for you. Everything from kink & BDSM to polyamory, group sex, threesomes, swinging, & straight up vanilla lovin'—Stella has the answers. Not only that, but Humptown will give you specific local resources whenever possible to help facilitate the sex life of your dreams.");
@@ -199,11 +199,8 @@ Neighborhood.prototype.filterByPrice = function (inputPrice) {
  }
 };
 
-// var places = [chineseGarden, groundKontrol, departure];
-// var out = filterByPlaceProperties('$', places);
-// out.forEach(place => console.log(place));
 
-function time(){ //function to fluctuate the css stylesheet
+function time(){ //fluctuate the css stylesheet
   var time = new Date();
   var hourNow = time.getHours();
 

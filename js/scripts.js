@@ -124,12 +124,37 @@ var departure = new Place("Departure Restaurent + Lounge",
 "In a space whose design is as daring as its cuisine, Departure is Portland’s sky-high retreat for both quick bites and leisurely dining. Step beyond its iconic façade into a world of cutting-edge interiors that seamlessly blend Portland’s pioneering past with its progressive future. With a relaxed, refined atmosphere, Departure is the ultimate location for encounters of every taste and style."
 );
 
+var livingRoomTheaters = new Place("Living Room Theaters",
+2,
+["food", "entertainment"],
+["gluten-free"],
+["family-friendly", "family-friendly", "casual"],
+["afternoon", "evening", "late-night"],
+"img/living-room-theater.png",
+"12PM",
+"10PM",
+"Living Room® Theaters is a visionary new concept created by longtime filmmakers. We set out to reinvent the way films are viewed and distributed. And to change everything we didn't like about conventional and art house movie theaters - from the film selection to the lobby ambiance, food, seating and service."
++ "</br>" +
+"Welcome to the new evolution of cinema - Living Room® Theaters -- the sophisticated yet superbly comfortable environment that combines a European style café and lounge with a relaxing place to see wonderful movies. Cinema has come to its senses.");
+
+var clubPivata = new Place("Club Privata",
+5,
+["bar", "food", "entertainment", "casual"],
+["gluten-free", "vegan"],
+["upscale", "views", "casual"],
+["evening", "late-night"],
+"img/departure.jpg",   //change img
+"8PM",
+"2AM",
+"Welcome to Humptown! Willamette Week's new sex advice column written by Portland sex educator and intimacy coach, Stella Harris. Ever had a question about sex and relationships but didn't know who to ask? Maybe you've wondered how to ask your partner for butt stuff, or an open relationship, or how to finally admit that actually, you haven't been having orgasms. Maybe you've got a fetish you've never told anyone about, but you're dying to explore. Diapers? Watersports? Latex? This is the place for you. Everything from kink & BDSM to polyamory, group sex, threesomes, swinging, & straight up vanilla lovin'—Stella has the answers. Not only that, but Humptown will give you specific local resources whenever possible to help facilitate the sex life of your dreams."
+);
+
 // Neighborhood objects
 var pearl = new Neighborhood("Pearl");
 pearl.places.push(powells, prasad);
 
 var downtown = new Neighborhood("Downtown");
-downtown.places.push(chineseGarden, groundKontrol, departure);
+downtown.places.push(chineseGarden, groundKontrol, departure, livingRoomTheaters, clubPivata);
 
 Neighborhood.prototype.filterByPrice = function (inputPrice) {
   var neighborhoods = [pearl, downtown];
@@ -147,7 +172,6 @@ Neighborhood.prototype.filterByPrice = function (inputPrice) {
 function time(){ //function to fluctuate the css stylesheet
   var time = new Date();
   var hourNow = time.getHours();
-  console.log(hourNow);
 
   if (hourNow > 18) {
     $("head").append('<link href="css/night.css" rel="stylesheet" type="text/css">');

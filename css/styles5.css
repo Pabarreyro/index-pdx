@@ -64,11 +64,11 @@ h1 {
 
 .form-control.well {
     background-color: rgb(190,200,206, .1);
-    border-color: rgb(49,49,49);
+    border-color: rgb(49,49,49, .1);
 }
 
 main#user-output.container-fluid {
-  background-color: rgb(213,220,224, .5);
+  background-color: rgb(213,220,224, .1);
   color: black;
   border-color: rgb(139,109,76);
   /*border-width: medium;*/
@@ -129,14 +129,15 @@ li.nav-bar-float {
 }
 
 #dollar-sign {
-  color: #258744;ß
+  color: #258744
 }
 
 .floatImg {
   color:#e2cd63;
 }
 
-.placeImage {
+img.placeImage {
+  max-width: 200px;
   float:left;
   margin-bottom: 20px;
   margin-right: 30px;
@@ -149,12 +150,16 @@ li.nav-bar-float {
 
 .hrs-float {
   float:right;
-  margin-right: 60px;
+  margin-right: 20px;
 }
 
 .weekday-hours, .weeknight-hours {
   float:right;
+
   padding-bottom: 12px;
+  /* margin-right: 1px; */
+  list-style: none;
+  text-align: right;
 }
 
 /*.form-row {

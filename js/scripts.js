@@ -88,7 +88,7 @@ var prasad = new Place("Prasad",
 "8PM",
 "Harlow breaks from the vegan mold (though remains vegetarian) mostly during breakfast, with a menu offering scrambles alongside rice or quinoa; huevos rancheros with housemade tortillas; and lemon poppy quinoa pancakes with a choice of vegan or dairy butter. (Also available for breakfast: granola, classic oatmeal, and maple-roasted veggies served with polenta and eggs.) Lunch expands Prasad's cafe menu of hot and raw soups, salads, and bowls (including the 'Mighty Bowl,' which is offered on a donation basis) with dishes like a vegan mac and cheese; dinner includes three raw dishes, including a raw veggie burger, and barbecue tempeh. In an attempt to make drinking a healthier pursuit, the bar will serve fresh juice-based cocktails, like the 'Dorian's Tonic' (featuring gin, cucumber, apple, basil, and cilantro), as well as a bourbon-heavy spirits menu.");
 
-// Place Objects (Downtown)
+// Place Objects (Old Town)
 var chineseGarden = new Place("Lan Su Chinese Garden",
 2,
 ["garden", "parks"],
@@ -111,6 +111,52 @@ var groundKontrol = new Place("Ground Kontrol",
 "2:30AM",
 "Ground Kontrol is the West Coast’s premier classic arcade. We preserve and celebrate video gaming’s “golden age” by operating over 60 classic video games and 27 pinball machines, feature a full-service bar after 5PM, host DJs, comedy shows, trivia nights, game tournaments, and Rock Band karaoke, and are available for public and private event rentals.");
 
+var oldTownPizza = new Place("Old Town Pizza",
+  1,
+  ["food", "bar"],
+  [],
+  ["family-friendly", "casual"],
+  ["afternoon", "evening"],
+  "img/oldtownpizza.jpg",
+  "11:30AM",
+  "11PM",
+  "Framed in the heart of the Portland, Oregon, Old Town emulates the spirit of our region with every beer we brew and every pizza we make. Inspired by the untamed attitude and the support of our driven community, you may consider this our love letter to the Pacific Northwest.");
+
+var roselandTheater = new Place("Roseland Theater",
+  2,
+  ["entertainment"],
+  [],
+  ["casual", "music"],
+  ["evening", "late-night"],
+  "img/roselandtheater.jpg",
+  "varies",
+  "varies",
+  "Managed by Double Tee Concerts, The Roseland Theater in Portland is one of the premier showcase concert venues in America.");
+
+var temp = new Place(name,
+  price,
+  type,
+  diet,
+  atmosphere,
+  hours,
+  img,
+  openTime,
+  closeTime,
+  desc = "");
+
+var temp = new Place(name,
+  price,
+  type,
+  diet,
+  atmosphere,
+  hours,
+  img,
+  openTime,
+  closeTime,
+  desc = "");
+
+
+// Neighborhood Downtown
 var departure = new Place("Departure Restaurent + Lounge",
 3,
 ["bar", "food"],
@@ -129,7 +175,10 @@ var pearl = new Neighborhood("Pearl");
 pearl.places.push(powells, prasad);
 
 var downtown = new Neighborhood("Downtown");
-downtown.places.push(chineseGarden, groundKontrol, departure);
+downtown.places.push(departure);
+
+var downtown = new Neighborhood("Old Town");
+downtown.places.push(chineseGarden, groundKontrol, oldTownPizza, roselandTheater);
 
 Neighborhood.prototype.filterByPrice = function (inputPrice) {
   var neighborhoods = [pearl, downtown];

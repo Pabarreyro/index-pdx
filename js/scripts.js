@@ -59,7 +59,7 @@ var powells = new Place("Powell's City of Books",
 1,
 ["shopping"],
 [],
-["family-friendly", "casual", "book"],
+["family-friendly", "casual", "book"], //coming up with
 ["morning", "afternoon", "evening"],
 "img/powells.jpg",
 "9AM",
@@ -139,7 +139,7 @@ var departure = new Place("Departure Restaurent + Lounge",
 3,
 ["bar", "food"],
 ["gluten-free", "vegan"],
-["upscale", "views"],
+["upscale", "views", "casual"],
 ["evening", "late-night"],
 "img/departure.jpg",
 "4PM",
@@ -148,89 +148,11 @@ var departure = new Place("Departure Restaurent + Lounge",
 "In a space whose design is as daring as its cuisine, Departure is Portland's sky-high retreat for both quick bites and leisurely dining. Step beyond its iconic facade into a world of cutting-edge interiors that seamlessly blend Portland's pioneering past with its progressive future. With a relaxed, refined atmosphere, Departure is the ultimate location for encounters of every taste and style."
 );
 
-var theOriginal = new Place("The Original Dinerant",
-  2,
-  ["food"],
-  [],
-  ["family-friendly", "casual"],
-  ["early-morning", "morning", "afternoon", "evening"],
-  "img/theoriginal.jpg",
-  "6AM",
-  "10PM",
-  "The Original is the perfect destination for unexpected all-day Portland dining. Our inspired menu of eclectic American cuisine takes on regional favorites and modifies them with local and seasonal ingredients resulting in flavors and textures unique to the Pacific Northwest. Unwind at our candle-lit bar for that much deserved post-prandial nightcap. At the Original, we honor the past as we listen in on the pulse of Portland's adventurous and evolving tastes.");
-
-var saucebox = new Place("Saucebox",
-  2,
-  ["food", "bar"],
-  ["vegan", "gluten-free"],
-  ["chic", "upscale"],
-  ["evening", "late-night"],
-  "img/saucebox.jpg",
-  "4PM",
-  "2AM",
-  "Established in 1995, saucebox has maintained its reputation in the city as the place for the finest in pan-asian and pacific island cuisine with its insider vibe and unique presence. Unforgettable dishes and innovative cocktails have given saucebox national notoriety in The New York Times, Bon Appetit Magazine, Travel & Leisure and The Wall Street Journal - but it's local attention and accolades like being honored as Restaurant of the Year In 1998 by the Oregonian that make saucebox a landmark of Portland restaurant and lounge scene.");
-
-var stumptown = new Place("Stumptown Coffee Roasters",
-  1,
-  ["cafe"],
-  ["vegan", "organic"],
-  ["family-friendly", "casual"],
-  ["early-morning", "morning", "afternoon"],
-  "img/stumptown.jpg",
-  "6AM",
-  "7PM",
-  "Stumptown Coffee Roasters is a coffee roaster and retailer based in Portland, Oregon, United States. The chain's flagship café and roastery opened in 1999.");
-
-var brunchBox = new Place("Brunch Box",
-  1,
-  ["food"],
-  [],
-  ["casual", "family-friendly", "limited seating"],
-  ["morning", "afternoon", "evening"],
-  "img/brunchbox.jpg",
-  "8AM",
-  "10PM",
-  "Small, casual spot for counter-serve breakfast, burgers & sandwiches in simple cafe environs.");
-
-var blueStar = new Place("Blue Star Donuts",
-  1,
-  ["food", "cafe"],
-  ["vegan"],
-  ["casual", "bakery", "limited seating"],
-  ["morning", "afternoon"],
-  "img/bluestardonuts.jpg",
-  "7AM",
-  "8PM",
-  "This upmarket brioche-donut bakery features creative flavors & organic, locally sourced ingredients.");
-
-var littleBird = new Place("Little Bird Bistro",
-  3,
-  ["food"],
-  ["organic"],
-  ["chic", "upscale", "happy hour"],
-  ["afternoon", "evening"],
-  "img/littlebird.jpg",
-  "11:30AM",
-  "12AM",
-  "Eclectic, inventive French bistro fare served in a sexy spot with red banquettes & mezzanine level.");
-
-var imperial = new Place("Imperial",
-  3,
-  ["food", "bar"],
-  ["organic"],
-  ["upscale", "happy hour"],
-  ["morning", "afternoon", "evening"],
-  "img/imperial.jpg",
-  "7AM",
-  "10PM",
-  "At Imperial, Chef Paley explores menu ideas that have historic significance and uses cooking methods and ingredients from Oregon's diverse bounty. The most prominent feature of Imperial's kitchen is the impressive wood fire grill and rotisserie that incorporate the use of native hard and fruitwoods. Inspired by warm and primitive burning campfire, and big open spaces of the Pacific Northwest, Imperial concentrates on healthy and uncomplicated preparations, serving the community by remembering its past and providing a warm, welcoming and generous place to eat.");
-
 // Neighborhood objects
 var pearl = new Neighborhood("Pearl");
 pearl.places.push(powells, prasad);
 
 var downtown = new Neighborhood("Downtown");
-downtown.places.push(departure, theOriginal, chineseGarden, groundKontrol, oldTownPizza, roselandTheater, hobos, saucebox, stumptown, brunchBox, blueStar, littleBird, imperial);
 
 Neighborhood.prototype.filterByPrice = function (inputPrice) {
   var neighborhoods = [pearl, downtown];
@@ -241,9 +163,19 @@ Neighborhood.prototype.filterByPrice = function (inputPrice) {
  }
 };
 
+function time(){ //fluctuate the css stylesheet
+  var time = new Date();
+  var hourNow = time.getHours();
 
-//User logic
+  if (hourNow > 18) {
+    $("head").append('<link href="css/night.css" rel="stylesheet" type="text/css">');
+  } else {
+    $("head").append('<link href="css/coolearth.css" rel="stylesheet" type="text/css">');
+  }
+}
+
 $(function() {
+  time();
   $("#filter-form").submit(function(event) {
     event.preventDefault();
     // debugger;
@@ -255,6 +187,7 @@ $(function() {
     $("input:checkbox[name=diet]:checked").each(function(){
       var inputDiet = $(this).val();
     });
+
 
     var neighborhoods = [pearl, downtown];
 

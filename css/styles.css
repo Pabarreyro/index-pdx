@@ -2,10 +2,12 @@ h1 {
   /*text-align: center;*/
   font-family: 'Abril Fatface', cursive;
   font-size: 47px;
+
 }
 
 .navbar {
-  color:white;
+  color:#f27107;
+  text-shadow: 2px 2px 4px #160b01;
 }
 
 #hamburger-nav-icon:hover {
@@ -19,9 +21,10 @@ h1 {
 }
 
 .label-dropdown {
-  color: #f9d372;
+  color: #f27107;
   font-size: 22px;
   font-family: 'Old Standard TT', serif;
+  text-shadow: 2px 2px 4px #160b01;
 }
 
 .hide {
@@ -29,7 +32,8 @@ h1 {
 }
 
 #form-field {
-  background-color: #DECAB5;
+
+  background-color: #3ca7b7;
   margin-top: 10px;
 }
 
@@ -48,6 +52,7 @@ li.nav-bar-float {
 }
 
 #filter-form {
+
   text-align: center;
   padding-top: 24px;
 }
@@ -72,15 +77,17 @@ li.nav-bar-float {
 }
 
 #features-list:hover {
-  color:#753c22;
+  color:#ef863b;
 }
+
+
 
 .place {
   padding-top: 14px;
 }
 
 #dollar-sign {
-  color: #258744;ß
+  color: #258744;
 }
 
 .floatImg {

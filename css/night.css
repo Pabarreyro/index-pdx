@@ -24,6 +24,9 @@ body {
 #navbar-custom {
     color: white;
     background-color: rgb(0,0,0, .5) !important;
+    max-width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 span.navbar-toggler-icon#hamburger-nav-icon {
@@ -57,6 +60,9 @@ span.navbar-toggler-icon#hamburger-nav-icon {
   background-size: cover;
   margin-top: 10px;
   margin-bottom: 10px;
+  max-width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .form-control {
@@ -67,11 +73,12 @@ span.navbar-toggler-icon#hamburger-nav-icon {
     border: solid 1px rgb(139,109,76);
 }
 
-main#user-output.container-fluid {
-  background-color: rgb(0,0,0, .7);
+main.container-fluid#user-output {
+  background-color: rgb(0,0,0, .5);
   color: white;
   border-color: rgb(139,109,76);
   border-width: medium;
+  max-width: 90%;
 }
 
 label.label-dropdown {
@@ -162,3 +169,26 @@ li.nav-bar-float {
   width: 100%;
   margin: 0 auto;
 }
+
+img.carousel-img {
+  /*max-width: 400px;*/
+  width: auto;
+height: 400px;
+max-height: 225px;
+  /*max-height: 400px;
+  min-height: 350px;
+  height: auto;
+  max-width: 50%;
+    height: auto;
+    width: auto\9;  ie8
+  margin: 0 auto;*/
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*@media only screen and (max-width: 576px) {
+   .carousel .carousel-inner .item{
+      height: 100px // feel free to add the height you want to use but it's going to change the ratio of your image
+   }
+}*/

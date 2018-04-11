@@ -34,16 +34,6 @@ function displayAtmosphere(array) {
   }
 }
 
-// Neighborhood.prototype.filterByName = function (userInput) {
-//   var neighborhoods = [pearl, downtown];
-//   for(var i = 0; i < neighborhoods.length; i ++){
-//     if(userInput === neighborhoods[i].name){
-//       return neighborhoods[i];
-//     }
-//   }
-//   return false;
-// };
-
 // function filter by places properties
 // input: userInput, could be any properties of a place
 // places: an array of places
@@ -99,7 +89,7 @@ var chineseGarden = new Place("Lan Su Chinese Garden",
 "img/chinesegarden.jpg",
 "10AM",
 "7PM",
-"A year-round wonder, the Lan Su Chinese Garden is an authentic Ming Dynasty style garden, built by Suzhou artisans, that takes up an entire block of the city’s historic Chinatown district. Since the garden’s opening in 2000, its covered walkways, bridges, open colonnades, pavilions and richly planted landscape framing the man-made Zither Lake have created an urban oasis of tranquil beauty and harmony. It’s an inspiring, serene setting for meditation, quiet thought and tea served at The Tao of Tea in the Tower of Cosmic Reflections, as well as public tours of the grounds led by expert horticulturalists.");
+"A year-round wonder, the Lan Su Chinese Garden is an authentic Ming Dynasty style garden, built by Suzhou artisans, that takes up an entire block of the city's historic Chinatown district. Since the garden's opening in 2000, its covered walkways, bridges, open colonnades, pavilions and richly planted landscape framing the man-made Zither Lake have created an urban oasis of tranquil beauty and harmony. It's an inspiring, serene setting for meditation, quiet thought and tea served at The Tao of Tea in the Tower of Cosmic Reflections, as well as public tours of the grounds led by expert horticulturalists.");
 
 var groundKontrol = new Place("Ground Kontrol",
 1,
@@ -110,7 +100,7 @@ var groundKontrol = new Place("Ground Kontrol",
 "img/groundkontrol.png",
 "12AM",
 "2:30AM",
-"Ground Kontrol is the West Coast’s premier classic arcade. We preserve and celebrate video gaming’s “golden age” by operating over 60 classic video games and 27 pinball machines, feature a full-service bar after 5PM, host DJs, comedy shows, trivia nights, game tournaments, and Rock Band karaoke, and are available for public and private event rentals.");
+"Ground Kontrol is the West Coast's premier classic arcade. We preserve and celebrate video gaming's golden age by operating over 60 classic video games and 27 pinball machines, feature a full-service bar after 5PM, host DJs, comedy shows, trivia nights, game tournaments, and Rock Band karaoke, and are available for public and private event rentals.");
 
 var oldTownPizza = new Place("Old Town Pizza",
   1,
@@ -154,8 +144,8 @@ var departure = new Place("Departure Restaurent + Lounge",
 "img/departure.jpg",
 "4PM",
 "11PM",
-"Floating atop the landmark Meier & Frank Building, Departure’s ambitious menu captivates diners with its masterful remix of authentic coastal cuisines. From street food-styled starters to meal-sized classics, rice and noodle specialties to market-fresh sushi, Departure embraces the bounty of the Pacific Northwest to deliver the fiery flavors of the Far east. Whether steamed or stir-fried, smoked or sautéed, each dish leads diners to another stage along Departure’s culinary adventure." + '<br>' +
-"In a space whose design is as daring as its cuisine, Departure is Portland’s sky-high retreat for both quick bites and leisurely dining. Step beyond its iconic façade into a world of cutting-edge interiors that seamlessly blend Portland’s pioneering past with its progressive future. With a relaxed, refined atmosphere, Departure is the ultimate location for encounters of every taste and style."
+"Floating atop the landmark Meier & Frank Building, Departure's ambitious menu captivates diners with its masterful remix of authentic coastal cuisines. From street food-styled starters to meal-sized classics, rice and noodle specialties to market-fresh sushi, Departure embraces the bounty of the Pacific Northwest to deliver the fiery flavors of the Far east. Whether steamed or stir-fried, smoked or sauteed, each dish leads diners to another stage along Departure's culinary adventure." + '<br>' +
+"In a space whose design is as daring as its cuisine, Departure is Portland's sky-high retreat for both quick bites and leisurely dining. Step beyond its iconic facade into a world of cutting-edge interiors that seamlessly blend Portland's pioneering past with its progressive future. With a relaxed, refined atmosphere, Departure is the ultimate location for encounters of every taste and style."
 );
 
 var theOriginal = new Place("The Original Dinerant",
@@ -167,7 +157,7 @@ var theOriginal = new Place("The Original Dinerant",
   "img/theoriginal.jpg",
   "6AM",
   "10PM",
-  "The Original is the perfect destination for unexpected all-day Portland dining. Our inspired menu of eclectic American cuisine takes on regional favorites and modifies them with local and seasonal ingredients resulting in flavors and textures unique to the Pacific Northwest. Unwind at our candle-lit bar for that much deserved post-prandial nightcap. At the Original, we honor the past as we listen in on the pulse of Portland’s adventurous and evolving tastes.");
+  "The Original is the perfect destination for unexpected all-day Portland dining. Our inspired menu of eclectic American cuisine takes on regional favorites and modifies them with local and seasonal ingredients resulting in flavors and textures unique to the Pacific Northwest. Unwind at our candle-lit bar for that much deserved post-prandial nightcap. At the Original, we honor the past as we listen in on the pulse of Portland's adventurous and evolving tastes.");
 
 var saucebox = new Place("Saucebox",
   2,
@@ -178,7 +168,7 @@ var saucebox = new Place("Saucebox",
   "img/saucebox.jpg",
   "4PM",
   "2AM",
-  "Established in 1995, saucebox has maintained its reputation in the city as the place for the finest in pan-asian and pacific island cuisine with its insider vibe and unique presence. Unforgettable dishes and innovative cocktails have given saucebox national notoriety in The New York Times, Bon Appetit Magazine, Travel & Leisure and The Wall Street Journal – but it’s local attention and accolades like being honored as “Restaurant of the Year” In 1998 by the Oregonian that make saucebox a landmark of Portland restaurant and lounge scene.");
+  "Established in 1995, saucebox has maintained its reputation in the city as the place for the finest in pan-asian and pacific island cuisine with its insider vibe and unique presence. Unforgettable dishes and innovative cocktails have given saucebox national notoriety in The New York Times, Bon Appetit Magazine, Travel & Leisure and The Wall Street Journal - but it's local attention and accolades like being honored as Restaurant of the Year In 1998 by the Oregonian that make saucebox a landmark of Portland restaurant and lounge scene.");
 
 var stumptown = new Place("Stumptown Coffee Roasters",
   1,
@@ -233,7 +223,7 @@ var imperial = new Place("Imperial",
   "img/imperial.jpg",
   "7AM",
   "10PM",
-  "At Imperial, Chef Paley explores menu ideas that have historic significance and uses cooking methods and ingredients from Oregon’s diverse bounty. The most prominent feature of Imperial’s kitchen is the impressive wood fire grill and rotisserie that incorporate the use of native hard and fruitwoods. Inspired by warm and primitive burning campfire, and big open spaces of the Pacific Northwest, Imperial concentrates on healthy and uncomplicated preparations, serving the community by remembering its past and providing a warm, welcoming and generous place to eat.");
+  "At Imperial, Chef Paley explores menu ideas that have historic significance and uses cooking methods and ingredients from Oregon's diverse bounty. The most prominent feature of Imperial's kitchen is the impressive wood fire grill and rotisserie that incorporate the use of native hard and fruitwoods. Inspired by warm and primitive burning campfire, and big open spaces of the Pacific Northwest, Imperial concentrates on healthy and uncomplicated preparations, serving the community by remembering its past and providing a warm, welcoming and generous place to eat.");
 
 // Neighborhood objects
 var pearl = new Neighborhood("Pearl");
@@ -252,11 +242,6 @@ Neighborhood.prototype.filterByPrice = function (inputPrice) {
 };
 
 
-// var places = [chineseGarden, groundKontrol, departure];
-// var out = filterByPlaceProperties('$', places);
-// out.forEach(place => console.log(place));
-
-
 //User logic
 $(function() {
   $("#filter-form").submit(function(event) {
@@ -269,17 +254,15 @@ $(function() {
 
     $("input:checkbox[name=diet]:checked").each(function(){
       var inputDiet = $(this).val();
-      // console.log(inputDiet);
-      // $("").append(inputDiet + "<br>");
     });
 
     var neighborhoods = [pearl, downtown];
 
     var outputNeighborhood = filterByName(inputLocation, neighborhoods);
-    // console.log(outputNeighborhood);
+
     var results = filterByPlaceProperties(inputPrice, outputNeighborhood.places);
-    // results = filterByPlaceProperties(inputType, results);
-    // console.log(results);
+    results = filterByPlaceProperties(inputType, results);
+
 
     results.forEach(function(result){
       $("#user-output").append( '<div class="well place">' +
@@ -299,12 +282,6 @@ $(function() {
                                   '</script>' +
                                 '<hr>' +
                                 '</div>');
-
-        // '<div class="well place">' +
-        //                           '<img class="placeImage" src="img/powells.jpeg" alt="an image of a bookstore">' +
-        //                           '<h2><span class="h2-style">' + result.name + '</span>  <i data-feather="star" class="floatImg"></i><i data-feather="star" class="floatImg"></i><i data-feather="star" class="floatImg"></i></h2>' +
-        //                           '<hr>' +
-        //                         '</div>');
     });
 
 

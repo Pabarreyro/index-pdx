@@ -1055,7 +1055,7 @@ $(function() {
     } else if (inputLocation === "all"){
      	pearlCopy = pearlPlacesArray.map(place => place);
 			Array.prototype.push.apply(pearlCopy,downtownPlacesArray);
-			console.log(pearlCopy);
+			
       results = filterByPlaceProperties(inputHours, pearlCopy);
       results = filterByPlaceProperties(inputType, results);
       results = filterByPlaceProperties(inputPrice, results);

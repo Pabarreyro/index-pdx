@@ -118,13 +118,14 @@ function filterByPrice(inputPrice) {
 }
 
 //User logic
-function displayAtmosphere(array) {
-  for(var i = 0; i < array.length; i ++){
-    '<li>' + array[i] + '</li>';
-  }
-}
+// function displayAtmosphere(array) {
+//   for(var i = 0; i < array.length; i ++){
+//     '<li>' + array[i] + '</li>';
+//   }
+// }
 
 $(function() {
+  time();
   $("#filter-form").submit(function(event) {
     event.preventDefault();
 
@@ -162,12 +163,6 @@ $(function() {
                                   '</script>' +
                                 '<hr>' +
                                 '</div>');
-
-        // '<div class="well place">' +
-        //                           '<img class="placeImage" src="img/powells.jpeg" alt="an image of a bookstore">' +
-        //                           '<h2><span class="h2-style">' + result.name + '</span>  <i data-feather="star" class="floatImg"></i><i data-feather="star" class="floatImg"></i><i data-feather="star" class="floatImg"></i></h2>' +
-        //                           '<hr>' +
-        //                         '</div>');
     });
 
 

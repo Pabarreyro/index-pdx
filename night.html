@@ -2,12 +2,23 @@
 <html>
   <head>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-      <link href="css/night.css" rel="stylesheet" type="text/css">
+      <!-- <link href="css/night.css" rel="stylesheet" type="text/css"> -->
       <script src="js/jquery-3.3.1.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
       <script src="js/scripts.js"></script>
       <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
       <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Abel|Old+Standard+TT" rel="stylesheet">
+      <style>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+ /* Make the image fully responsive */
+ .carousel-inner img {
+     width: 100%;
+     height: 100%;
+ }
+ </style>
     <title>Index PDX</title>
   </head>
   <body>
@@ -103,6 +114,7 @@
       </form>
     </div>
       <main class="container-fluid" id="user-output">
+<<<<<<< HEAD
         <div class="well place">
           <img class="placeImage" src="img/powells.jpg" alt="an image of a bookstore">
           <h2><span class="h2-style">Powell's City of Books</span>  <i data-feather="star" class="floatImg"></i><i data-feather="star" class="floatImg"></i><i data-feather="star" class="floatImg"></i></h2>
@@ -114,18 +126,65 @@
             <li class="weekday-hours">Mon-Fri: <span id="open-time"></span> - <span id="close-time"></span></li>
           </ul>
           <p>Powell's Books is an independent bookseller serving Portland, Oregon, since 1971. We've grown to employ over 530 people across five Portland-area stores and Powells.com, and our book inventory exceeds two million volumes. In spite of our substantial size and reach, we remain grounded by our company's core values, which have guided us through the ups and downs of the bookselling industry. Each and every employee's love of books drives us forward.</p>
+=======
+        <div class="intro">
+          <h2>Welcome to the City of Roses!</h2>
+          <p id="pintro">Whether you're here to visit or you've been here all your life, we created this page for anyone who wants to find places to go, food to eat and people to meet! With Portland, we pride ourselves in the plethora of different cuisines with down to earth prices.</p>
 
-          <p>We have an especially intimate relationship with Portland — what other city in America can name a bookstore as its top attraction? We host over 500 author events a year, in addition to children's storytimes, writing workshops, game demonstrations, and book clubs. Through Powells.com and our expansive online community, we also reach readers around the world, people who are as excited about books as we are.</p>
-          <ul id="features-list">
-            <li>Book</li>
-            <li>Casual</li>
-            <li>Family-friendly</li>
-            <li>Cafe</li>
-          </ul>
-          <script>
-            feather.replace()
-          </script>
-        <hr>
+          <div id="demo" class="carousel slide" data-ride="carousel">
+
+            <!-- Indicators -->
+            <ul class="carousel-indicators">
+              <li data-target="#demo" data-slide-to="0" class="active"></li>
+              <li data-target="#demo" data-slide-to="1"></li>
+              <li data-target="#demo" data-slide-to="2"></li>
+            </ul>
+
+            <!-- The slideshow -->
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="img/carousel/trails-bridge.jpg" alt="Trails Bridge" class="carousel-img">
+              </div>
+              <div class="carousel-item">
+                <img src="img/carousel/food-truck3.jpg" alt="Food Truck" class="carousel-img">
+              </div>
+              <div class="carousel-item">
+                <img src="img/carousel/portland-oldtown.jpg" alt="Portland Oldtown" class="carousel-img">
+              </div>
+              <div class="carousel-item">
+                <img src="img/carousel/club.jpg" alt="Portland Club" class="carousel-img">
+              </div>
+              <div class="carousel-item">
+                <img src="img/carousel/unicycle-dude.jpg" alt="Max Def" class="carousel-img">
+              </div>
+              <div class="carousel-item">
+                <img src="img/carousel/trails-bigfoot.jpg" alt="Human Big Foot" class="carousel-img">
+              </div>
+              <div class="carousel-item">
+                <img src="img/carousel/food-truck2.jpg" alt="Food Truck" class="carousel-img">
+              </div>
+              <div class="carousel-item">
+                <img src="img/carousel/moda-center.jpg" alt="Moda Center" class="carousel-img">
+              </div>
+              <div class="carousel-item">
+                <img src="img/carousel/forest-park.jpg" alt="Forest Trail" class="carousel-img">
+              </div>
+              <div class="carousel-item">
+                <img src="img/carousel/club2.jpg" alt="Club Night" class="carousel-img">
+              </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </a>
+
+          </div>
+>>>>>>> master
+
         </div>
       </main>
     </div>

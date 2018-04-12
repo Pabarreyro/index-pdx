@@ -122,6 +122,8 @@ function time(){ //fluctuate the css stylesheet
   var time = new Date();
   var hourNow = time.getHours();
 
+  // var hourNow = 20;
+
   if (hourNow > 18) {
     $("head").append('<link href="css/night.css" rel="stylesheet" type="text/css">');
   } else {

@@ -10,14 +10,7 @@
     <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Abel|Old+Standard+TT" rel="stylesheet">
-    <style>
       <meta name="viewport" content="width=device-width, initial-scale=1">
-       /* Make the image fully responsive */
-       .carousel-inner img {
-           width: 100%;
-           height: 100%;
-       }
-   </style>
     <title>Index PDX</title>
   </head>
   <body>
@@ -25,37 +18,40 @@
       <div class="navbar navbar-dark bg-dark" id="navbar-custom">
       <!-- <div class="navbar" > -->
         <h1>Index PDX</h1>
+        <div id="arrow">&rarr;</div>
         <span class="navbar-toggler-icon" id="hamburger-nav-icon"></span>
       </div>
       <div class="well" id="form-field">
         <form class="hide" id="filter-form">
           <div class="form-row">
-            <div class="form-control well col-lg-2">
+            <div class="form-control col-lg-2">
               <label for="location" class="label-dropdown">Location</label>
-              <div class="radio">
+              <div class="radio" required>
                 <label>
                   <input type="radio" name="location" value="Pearl">
                   Pearl District
                 </label>
               </div>
-              <div class="radio">
+              <div class="radio" required>
                 <label>
                   <input type="radio" name="location" value="Downtown">
                   Downtown
                 </label>
               </div>
             </div>
-            <div class="form-control well col-lg-2">
+            <div class="form-control col-lg-2">
               <label for="price" class="label-dropdown">Price</label>
-              <select class="form-control" id="inputPrice">
+              <select class="form-control" id="inputPrice" required>
+                <option value="0"></option>
                 <option value="1">$</option>
                 <option value="2">$$</option>
                 <option value="3">$$$</option>
               </select>
             </div>
-            <div class="form-control well col-lg-2">
+            <div class="form-control col-lg-2">
               <label for="type" class="label-dropdown">Type</label>
-              <select class="form-control" id="inputType">
+              <select class="form-control" id="inputType" required>
+                <option value="empty"></option>
                 <option value="bar">Bar</option>
                 <option value="cafe">Cafe</option>
                 <option value="entertainment">Entertainment</option>
@@ -63,9 +59,9 @@
                 <option value="shopping">Shopping</option>
               </select>
             </div>
-            <div class="form-control well col-lg-2">
+            <div class="form-control col-lg-2">
               <label for="hours" class="label-dropdown">Hours</label>
-              <div class="radio">
+              <div class="radio" required>
                 <label>
                   <input type="radio" name="hours" value="early-morning">
                   Early Morning
@@ -96,7 +92,7 @@
                 </label>
               </div>
             </div>
-            <div class="form-control well col-lg-2">
+            <div class="form-control col-lg-2">
               <label class="label-dropdown" class="label-dropdown">Dietary Restrictions</label>
               <br>
               <input type="checkbox" name="diet" value="gluten-free"> Gluten Free<br>
@@ -104,7 +100,7 @@
               <input type="checkbox" name="diet" value="vegan"> Vegan<br>
               <input type="checkbox" name="diet" value="raw"> Raw<br>
             </div>
-          </di
+          </div>
           <div id="submitBtn">
             <button type="submit" class="btn btn btn-outline-light w-75 p-2">Filter</button>
           </div>
@@ -112,18 +108,16 @@
     </div>
       <main class="container-fluid" id="user-output">
         <div class="intro">
-          <h2>Welcome to the City of Roses!</h2>
+        </br>
+          <h2 id="welcome-font">Welcome to the City of Roses!</h2>
           <p id="pintro">Whether you're here to visit or you've been here all your life, we created this page for anyone who wants to find places to go, food to eat and people to meet! With Portland, we pride ourselves in the plethora of different cuisines with down to earth prices.</p>
-
           <div id="demo" class="carousel slide" data-ride="carousel">
-
             <!-- Indicators -->
             <ul class="carousel-indicators">
               <li data-target="#demo" data-slide-to="0" class="active"></li>
               <li data-target="#demo" data-slide-to="1"></li>
               <li data-target="#demo" data-slide-to="2"></li>
             </ul>
-
             <!-- The slideshow -->
             <div class="carousel-inner">
               <div class="carousel-item active">
@@ -157,7 +151,6 @@
                 <img src="img/carousel/club2.jpg" alt="Club Night" class="carousel-img">
               </div>
             </div>
-
             <!-- Left and right controls -->
             <a class="carousel-control-prev" href="#demo" data-slide="prev">
               <span class="carousel-control-prev-icon"></span>
@@ -165,9 +158,7 @@
             <a class="carousel-control-next" href="#demo" data-slide="next">
               <span class="carousel-control-next-icon"></span>
             </a>
-
           </div>
-
         </div>
       </main>
     </div>

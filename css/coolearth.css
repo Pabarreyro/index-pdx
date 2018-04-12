@@ -73,6 +73,7 @@ main#user-output.container-fluid {
   border-color: rgb(139,109,76);
   /*border-width: medium;*/
   margin-top: 10px;
+  /* min-height: 200px; */
 }
 
 label.label-dropdown {
@@ -208,3 +209,73 @@ i.material-icons#star {
   /* Support for IE. */
   font-feature-settings: 'liga';
 }
+
+/* // Extra small devices (portrait phones, less than 576px) */
+
+
+/* @media  screen and (min-width: 575.98px),
+ {
+  div.intro,h2,p#pintro {
+    color:black;
+  }
+ } */
+
+ /* img.carousel-img {
+   width: auto;
+ max-height: 400px;
+   display: block;
+   padding-bottom: 5%;
+     margin-left: auto;
+     margin-right: auto;
+ } */
+
+ .carousel img{
+     display:block;
+     width:100%;
+     max-width:400px;
+ }
+
+ #arrow {
+   float:right;
+     position: absolute;
+     margin-left: 90%;
+     top: 0; bottom: 0;
+     left: 0; right: 0;
+     width: 15px;
+     height: 15px;
+     font-size: 20px;
+     line-height: 400%;
+     -webkit-animation: bounce 3s infinite ease-in-out;
+ }
+ @-webkit-keyframes bounce {
+ 	0%, 20%, 60%, 100%  { -webkit-transform: translateY(0); }
+     40%  { -webkit-transform: translateX(-20px); }
+ 	80% { -webkit-transform: translateX(-10px); }
+ }
+
+/* Small devices (landscape phones, less than 768px) */
+@media only screen and (max-width: 767.98px) {
+  #carousel{
+     margin-top:30%;
+   }
+   #arrow {
+     margin-left: 85%;
+   }
+}
+
+ /* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+    #carousel{
+       margin-top:20%;
+     }
+}
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1499.98px) {
+  /* #arrow {
+    margin-left: 95%;
+  } */
+ }
+
+/* // Extra large devices (large desktops)
+// No media query since the extra-large breakpoint has no upper bound on its width */

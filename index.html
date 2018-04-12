@@ -5,7 +5,7 @@
     <script src="js/jquery-3.3.1.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="js/scripts.js"></script>
     <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
@@ -24,15 +24,15 @@
       <div class="well" id="form-field">
         <form class="hide" id="filter-form">
           <div class="form-row">
-            <div class="form-control col-lg-2">
+            <div class="form-control col-lg-2" required>
               <label for="location" class="label-dropdown">Location</label>
-              <div class="radio" required>
+              <div class="radio">
                 <label>
                   <input type="radio" name="location" value="Pearl">
                   Pearl District
                 </label>
               </div>
-              <div class="radio" required>
+              <div class="radio">
                 <label>
                   <input type="radio" name="location" value="Downtown">
                   Downtown
@@ -59,9 +59,9 @@
                 <option value="shopping">Shopping</option>
               </select>
             </div>
-            <div class="form-control col-lg-2">
+            <div class="form-control col-lg-2" required>
               <label for="hours" class="label-dropdown">Hours</label>
-              <div class="radio" required>
+              <div class="radio">
                 <label>
                   <input type="radio" name="hours" value="early-morning">
                   Early Morning

@@ -7,6 +7,10 @@ h2 {
   text-align: center;
 }
 
+hr {
+  background-color: white;
+}
+
 #pintro {
   font-size: 18px;
   margin-left: 20%;
@@ -135,6 +139,10 @@ li.nav-bar-float {
 
 .place {
   padding-top: 14px;
+}
+
+.place img {
+  width: 150px;
 }
 
 #dollar-sign {

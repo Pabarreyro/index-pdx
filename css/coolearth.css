@@ -7,6 +7,10 @@ h1 {
   text-align: center;
 }
 
+hr {
+  background-color: white;
+}
+
 #pintro {
   font-size: 18px;
   margin-left: 20%;
@@ -82,7 +86,7 @@ span.navbar-toggler-icon#hamburger-nav-icon {
 }
 
 main.container-fluid#user-output {
-  background-color: rgb(0,0,0, .5);
+  background-color: rgb(0,0,0, .7);
   color: white;
   border-color: rgb(139,109,76);
   border-width: medium;

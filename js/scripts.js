@@ -120,7 +120,8 @@ function filterByPrice(inputPrice) {
 //User logic
 function time(){ //fluctuate the css stylesheet
   var time = new Date();
-  var hourNow = time.getHours();
+  // var hourNow = time.getHours();
+  var hourNow = 17;
 
   if (hourNow > 18) {
     $("head").append('<link href="css/night.css" rel="stylesheet" type="text/css">');

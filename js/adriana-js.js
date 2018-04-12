@@ -862,20 +862,6 @@ const filterByPlaceProperties = (input, places) => {
 // input: userInput, could be any properties of a place
 // places: an array of places
 // return: an array of matched places
-<<<<<<< HEAD
-function filterByPlaceProperties(input, places) {
-  var outplaces =[];
-  places.forEach(function(place){
-    for(let property in place){
-      if(place[property] === input){
-        outplaces.push(place);
-      } else if(Array.isArray(place[property]) && place[property].includes(input)){
-        outplaces.push(place);
-      }
-    }
-  });
-  return outplaces;
-=======
 	let outplaces = [];
 	places.forEach(function (place) {
 		for (let property in place) {
@@ -887,7 +873,6 @@ function filterByPlaceProperties(input, places) {
 		}
 	});
 	return outplaces;
->>>>>>> master
 };
 
 const countElement = aArr => {
@@ -966,16 +951,15 @@ const findAllPlaces = (userInputs, places) => {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //User logic
-function time(){ //fluctuate the css stylesheet
-  var time = new Date();
-  // var hourNow = time.getHours();
-  var hourNow = 17;
+function time() { //fluctuate the css stylesheet
+	var time = new Date();
+	var hourNow = time.getHours();
 
-  if (hourNow > 18) {
-    $("head").append('<link href="css/night.css" rel="stylesheet" type="text/css">');
-  } else {
-    $("head").append('<link href="css/coolearth.css" rel="stylesheet" type="text/css">');
-  }
+	if (hourNow > 18) {
+		$("head").append('<link href="css/night.css" rel="stylesheet" type="text/css">');
+	} else {
+		$("head").append('<link href="css/coolearth.css" rel="stylesheet" type="text/css">');
+	}
 }
 
 function displayAtmosphere(array) {
@@ -984,94 +968,63 @@ function displayAtmosphere(array) {
 	}
 }
 
-function displayOutput(results) {
-  if (results.length > 0) {
-    results.forEach(function(result){
-      $("#user-output").append( '<div class="well place">' +
-      '<img class="placeImage" src="' + result.img + '" alt="an image of ' + result.name +  '" id="placeImg">' +
-      '<h2><span class="h2-style">' + result.name + '</span>  <i data-feather="star" class="floatImg"></i></h2>' +
-      '<i data-feather="dollar-sign" id="dollar-sign"></i>'.repeat(result.price) +
-      '<p class="hrs-float"><strong>Hours: </strong></p>' +
-      '<ul id="hours-list">' +
-      '<li class="weeknight-hours">' + result.openTime + '<span id="open-time"></span> - <span id="close-time">' + result.closeTime + '</span></li>' +
-      '</ul>' +
-      '<p>' + result.desc + '</p>' +
-      '<ul id="features-list">' +
-      result.atmosphere.join(", ") +
-      '</ul>' +
-      '<script>' +
-      'feather.replace()' +
-      '</script>' +
-      '<hr>' +
-      '</div>');
-    });
+$(function () {
+	time();
+	$("#filter-form").submit(function (event) {
+		event.preventDefault();
+		$(".intro").hide();
+		$("#user-output").empty();
 
-  } else {
-    $("#user-output").append( '<div class="well no-place">' +
-    '<h2><span class="h2-style">Wish we could help!</span>  <i data-feather="star" class="floatImg"></i></h2>' + '<img class="placeImage" src="img/rejection.gif" alt="no, no, no" id="placeImg">' +
-    '<p> We are working to expand our functionality. Please try again soon!</p>' +
-    '</div>');
-  }
-}
+		var inputPrice = parseInt($("#inputPrice").val());
+		console.log(inputPrice);
+		var inputLocation = $("input:radio[name=location]:checked").val();
+		var inputType = $("#inputType").val();
+		var inputHours = $("input:radio[name=hours]:checked").val();
 
-$(function() {
-  time();
+		$("input:checkbox[name=diet]:checked").each(function () {
+			var inputDiet = $(this).val();
+		});
 
-  $("#filter-form").submit(function(event) {
-    event.preventDefault();
-    $(".intro").hide();
-    $("#user-output").empty();
+		// inputs is one dimentional array,
+		// if any userInput is an array (eg.inputCheckbox), then inputs = inputs.concat(inputCheckbox)
+		var inputs = [inputPrice, inputType, inputHours];
+		var inputNames = filterWithMutipleInputs(inputs, pearlPlacesArray);
+		var results = findAllPlaces(inputNames, pearlPlacesArray);
 
-    var inputLocation = $("input:radio[name=location]:checked").val();
-    console.log(inputLocation);
-    var inputPrice = parseInt($("#inputPrice").val());
-    var inputType = $("#inputType").val();
-    var inputHours = $("input:radio[name=hours]:checked").val();
-    var results = [];
+		// console.log(results);
+		// var results = filterByPlaceProperties(inputHours, pearlPlacesArray);
+		// console.log(results);
+		// results = filterByPlaceProperties(inputType, results);
+		// console.log(results);
+		// results = filterByPlaceProperties(inputPrice, results);
+		// console.log(results);
 
-    $("input:checkbox[name=diet]:checked").each(function(){
-      var inputDiet = $(this).val();
-    });
+		results.forEach(function (result) {
+			$("#user-output").append('<div class="well place">' +
+				'<img class="placeImage" src="' + result.img + '" alt="an image of ' + result.name + '" id="placeImg">' +
+				'<h2><span class="h2-style">' + result.name + '</span>  <i data-feather="star" class="floatImg"></i></h2>' +
+				'<i data-feather="dollar-sign" id="dollar-sign"></i>'.repeat(result.price) +
+				'<p class="hrs-float"><strong>Hours: </strong></p>' +
+				'<ul id="hours-list">' +
+				'<li class="weeknight-hours">' + result.openTime + '<span id="open-time"></span> - <span id="close-time">' + result.closeTime + '</span></li>' +
+				'</ul>' +
+				'<p>' + result.desc + '</p>' +
+				'<ul id="features-list">' +
+				result.atmosphere.join(", ") +
+				'</ul>' +
+				'<script>' +
+				'feather.replace()' +
+				'</script>' +
+				'<hr>' +
+				'</div>');
+		});
 
-    if (inputLocation === "pearl") {
-      results = filterByPlaceProperties(inputHours, pearlPlacesArray);
-      results = filterByPlaceProperties(inputType, results);
-      results = filterByPlaceProperties(inputPrice, results);
 
-      console.log(results.length);
-      displayOutput(results);
-    } else if (inputLocation === "downtown"){
-      results = filterByPlaceProperties(inputHours, downtownPlacesArray);
-      results = filterByPlaceProperties(inputType, results);
-      results = filterByPlaceProperties(inputPrice, results);
+		$("#filter-form").toggleClass("hide");
+	});
 
-      console.log(results.length);
-      displayOutput(results);
-    } else if (inputLocation === "all"){
-      console.log("Checking all");
-      results = filterByPlaceProperties(inputHours, pearlPlacesArray);
-      console.log(results);
-      results = filterByPlaceProperties(inputHours, downtownPlacesArray);
-      console.log(results);
-      results = filterByPlaceProperties(inputType, results);
-      console.log(results);
-      results = filterByPlaceProperties(inputPrice, results);
-
-      console.log(results.length);
-      displayOutput(results);
-    }
-
-    $("#filter-form").toggleClass("hide");
-  });
-
-  $("#hamburger-nav-icon").click(function(){
-    $("#filter-form").toggleClass("hide");
-    $("#filter-form")[0].reset();
-    $("#filter-form")[1].reset();
-    $("#filter-form")[2].reset();
-    $("#filter-form")[3].reset();
-    $("#filter-form")[4].reset();
-
-  });
+	$("#hamburger-nav-icon").click(function () {
+		$("#filter-form").toggleClass("hide");
+	});
 
 });

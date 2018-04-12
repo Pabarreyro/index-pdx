@@ -92,7 +92,6 @@ let downtownPlacesArray = [
 // places: an array of places
 // return: an array of matched places
 function filterByPlaceProperties(input, places) {
-  console.log(input);
   var outplaces =[];
   places.forEach(function(place){
     for(let property in place){
@@ -137,55 +136,91 @@ function displayAtmosphere(array) {
   }
 }
 
+function displayOutput(results) {
+  if (results.length > 0) {
+    results.forEach(function(result){
+      $("#user-output").append( '<div class="well place">' +
+      '<img class="placeImage" src="' + result.img + '" alt="an image of ' + result.name +  '" id="placeImg">' +
+      '<h2><span class="h2-style">' + result.name + '</span>  <i data-feather="star" class="floatImg"></i></h2>' +
+      '<i data-feather="dollar-sign" id="dollar-sign"></i>'.repeat(result.price) +
+      '<p class="hrs-float"><strong>Hours: </strong></p>' +
+      '<ul id="hours-list">' +
+      '<li class="weeknight-hours">' + result.openTime + '<span id="open-time"></span> - <span id="close-time">' + result.closeTime + '</span></li>' +
+      '</ul>' +
+      '<p>' + result.desc + '</p>' +
+      '<ul id="features-list">' +
+      result.atmosphere.join(", ") +
+      '</ul>' +
+      '<script>' +
+      'feather.replace()' +
+      '</script>' +
+      '<hr>' +
+      '</div>');
+    });
+
+  } else {
+    $("#user-output").append( '<div class="well place">' +
+    '<img class="placeImage" src="' + '" alt="an image of ' +  '" id="placeImg">' +
+    '<h2><span class="h2-style">Wish we could help!</span>  <i data-feather="star" class="floatImg"></i></h2>' +
+    '<p> We are working to expand out functionality. Please try again soon!</p>' +
+    '</div>');
+  }
+}
+
 $(function() {
   time();
+
   $("#filter-form").submit(function(event) {
     event.preventDefault();
     $(".intro").hide();
     $("#user-output").empty();
 
-    var inputPrice = parseInt($("#inputPrice").val());
     var inputLocation = $("input:radio[name=location]:checked").val();
+    console.log(inputLocation);
+    var inputPrice = parseInt($("#inputPrice").val());
     var inputType = $("#inputType").val();
     var inputHours = $("input:radio[name=hours]:checked").val();
+    var results = [];
 
     $("input:checkbox[name=diet]:checked").each(function(){
       var inputDiet = $(this).val();
     });
 
-    var results = filterByPlaceProperties(inputHours, pearlPlacesArray);
-    console.log(results);
-    results = filterByPlaceProperties(inputType, results);
-    console.log(results);
-    results = filterByPlaceProperties(inputPrice, results);
-    console.log(results);
+    if (inputLocation === "Pearl") {
+      results = filterByPlaceProperties(inputHours, pearlPlacesArray);
+      results = filterByPlaceProperties(inputType, results);
+      results = filterByPlaceProperties(inputPrice, results);
 
-    results.forEach(function(result){
-      $("#user-output").append( '<div class="well place">' +
-                                  '<img class="placeImage" src="' + result.img + '" alt="an image of ' + result.name +  '" id="placeImg">' +
-                                  '<h2><span class="h2-style">' + result.name + '</span>  <i data-feather="star" class="floatImg"></i></h2>' +
-                                  '<i data-feather="dollar-sign" id="dollar-sign"></i>'.repeat(result.price) +
-                                  '<p class="hrs-float"><strong>Hours: </strong></p>' +
-                                  '<ul id="hours-list">' +
-                                    '<li class="weeknight-hours">' + result.openTime + '<span id="open-time"></span> - <span id="close-time">' + result.closeTime + '</span></li>' +
-                                  '</ul>' +
-                                  '<p>' + result.desc + '</p>' +
-                                  '<ul id="features-list">' +
-                                    result.atmosphere.join(", ") +
-                                  '</ul>' +
-                                  '<script>' +
-                                    'feather.replace()' +
-                                  '</script>' +
-                                '<hr>' +
-                                '</div>');
-    });
+      console.log(results.length);
+      displayOutput(results);
+    } else if (inputLocation === "Downtown"){
+      results = filterByPlaceProperties(inputHours, downtownPlacesArray);
+      results = filterByPlaceProperties(inputType, results);
+      results = filterByPlaceProperties(inputPrice, results);
 
+      console.log(results.length);
+      displayOutput(results);
+    } else {
+      results = filterByPlaceProperties(inputHours, pearlPlacesArray);
+      results = filterByPlaceProperties(inputHours, downtownPlacesArray);
+      results = filterByPlaceProperties(inputType, results);
+      results = filterByPlaceProperties(inputPrice, results);
+
+      console.log(results.length);
+      displayOutput(results);
+    }
 
     $("#filter-form").toggleClass("hide");
   });
 
   $("#hamburger-nav-icon").click(function(){
     $("#filter-form").toggleClass("hide");
+    $("#filter-form")[0].reset();
+    $("#filter-form")[1].reset();
+    $("#filter-form")[2].reset();
+    $("#filter-form")[3].reset();
+    $("#filter-form")[4].reset();
+
   });
 
 });

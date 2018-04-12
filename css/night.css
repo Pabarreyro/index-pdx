@@ -182,19 +182,19 @@ max-height: 400px;
     margin-right: auto;
 }
 
-@media only screen and (max-width: 576px) {
+/* @media only screen and (max-width: 576px) {
    .carousel .carousel-inner .item{
       height: 100px // feel free to add the height you want to use but it's going to change the ratio of your image
    }
-}
+} */
 
 /*Not working, need to figure out*/
-@media (max-width: @screen-sm-min) {
+/* @media (max-width: @screen-sm-min) {
   body {
       background-image: url(../img/portland.jpg);
       font-size: 10rem;
     }
- }
+ } */
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: @screen-md-min) { ... }

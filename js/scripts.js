@@ -173,21 +173,29 @@ $(function() {
     $(".intro").hide();
     $("#user-output").empty();
 
-    var inputLocation = $("input:radio[name=location]:checked").val();
+    var inputLocation = $("#inputLocation").val();;
     console.log(inputLocation);
     var inputPrice = parseInt($("#inputPrice").val());
     var inputType = $("#inputType").val();
-    var inputHours = $("input:radio[name=hours]:checked").val();
+    var inputHours = $("#inputHours").val();;
     var results = [];
+    var inputDiet = [];
 
     $("input:checkbox[name=diet]:checked").each(function(){
-      var inputDiet = $(this).val();
+      inputDiet = $(this).val();
     });
 
+    console.log(inputDiet.length);
     if (inputLocation === "Pearl") {
       results = filterByPlaceProperties(inputHours, pearlPlacesArray);
       results = filterByPlaceProperties(inputType, results);
       results = filterByPlaceProperties(inputPrice, results);
+
+      if (inputDiet.length > 0) {
+        inputDiet.forEach(function(){
+          results = filterByPlaceProperties(inputPrice, results);
+        });
+      }
 
       console.log(results.length);
       displayOutput(results);
@@ -196,6 +204,12 @@ $(function() {
       results = filterByPlaceProperties(inputType, results);
       results = filterByPlaceProperties(inputPrice, results);
 
+      if (inputDiet.length > 0) {
+        inputDiet.forEach(function(){
+          results = filterByPlaceProperties(inputPrice, results);
+        });
+      }
+
       console.log(results.length);
       displayOutput(results);
     } else {
@@ -203,6 +217,12 @@ $(function() {
       results = filterByPlaceProperties(inputHours, downtownPlacesArray);
       results = filterByPlaceProperties(inputType, results);
       results = filterByPlaceProperties(inputPrice, results);
+
+      if (inputDiet.length > 0) {
+        inputDiet.forEach(function(restriction){
+          results = filterByPlaceProperties(restriction, results);
+        });
+      }
 
       console.log(results.length);
       displayOutput(results);

@@ -8,8 +8,9 @@ h2 {
 }
 
 #pintro {
-margin-left: 20%;
-margin-right: 20%;
+  font-size: 18px;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
 html, body {
@@ -19,23 +20,22 @@ html, body {
 body {
   background-image:url(../img/portland-night.jpg);
   -webkit-background-size: cover;
- -moz-background-size: cover;
- -o-background-size: cover;
- background-size: cover;
-  background-repeat:   no-repeat;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .navbar {
   color:white;
-
 }
 
 #navbar-custom {
-    color: white;
-    background-color: rgb(0,0,0, .5) !important;
-    max-width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;
+  color: white;
+  background-color: rgb(0,0,0, .5) !important;
+  max-width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 span.navbar-toggler-icon#hamburger-nav-icon {
@@ -48,7 +48,7 @@ span.navbar-toggler-icon#hamburger-nav-icon {
   border-radius: 2px;
 }
 
-.h2-style {
+.h2-style, #welcome-font {
   font-family: 'Old Standard TT', serif;
 }
 
@@ -75,9 +75,10 @@ span.navbar-toggler-icon#hamburger-nav-icon {
 .form-control {
   text-align: left;
 }
+
 .form-control.well {
-    background-color: rgb(144, 134, 137, .1);
-    border: solid 1px rgb(139,109,76);
+  background-color: rgb(144, 134, 137, .1);
+  border: solid 1px rgb(139,109,76);
 }
 
 main.container-fluid#user-output {
@@ -96,8 +97,6 @@ label.label-dropdown {
   padding: 8px;
   margin-left: auto;
   margin-right: auto;
-  /*margin-top: 10px;
-  margin-bottom: 10px;*/
   color: white;
   background: none;
 }
@@ -109,7 +108,6 @@ li.nav-bar-float {
 #filter-form {
   text-align: center;
   padding-top: 24px;
-
 }
 
 #submitBtn {
@@ -175,27 +173,41 @@ li.nav-bar-float {
 
 img.carousel-img {
   width: auto;
-max-height: 400px;
+  max-height: 400px;
   display: block;
   padding-bottom: 5%;
-    margin-left: auto;
-    margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* @media only screen and (max-width: 576px) {
-   .carousel .carousel-inner .item{
-      height: 100px // feel free to add the height you want to use but it's going to change the ratio of your image
-   }
-} */
+#arrow {
+  float:right;
+  position: absolute;
+  margin-left: 90%;
+  top: 0; bottom: 0;
+  left: 0; right: 0;
+  width: 15px;
+  height: 15px;
+  font-size: 20px;
+  line-height: 400%;
+  -webkit-animation: bounce 3s infinite ease-in-out;
+}
 
-/*Not working, need to figure out*/
-/* @media (max-width: @screen-sm-min) {
-  body {
-      background-image: url(../img/portland.jpg);
-      font-size: 10rem;
-    }
- } */
+@-webkit-keyframes bounce {
+ 	0%, 20%, 60%, 100%  { -webkit-transform: translateY(0); }
+  40%  { -webkit-transform: translateX(-20px); }
+ 	80% { -webkit-transform: translateX(-10px); }
+}
 
+/* Small devices (landscape phones, less than 768px) */
+@media only screen and (max-width: 767.98px) {
+  #carousel{
+    margin-top:30%;
+  }
+  #arrow {
+    margin-left: 85%;
+  }
+}
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: @screen-md-min) { ... }
 

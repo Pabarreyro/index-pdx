@@ -7,6 +7,10 @@ h1 {
   text-align: center;
 }
 
+hr {
+  background-color: white;
+}
+
 #pintro {
   font-size: 18px;
   margin-left: 20%;

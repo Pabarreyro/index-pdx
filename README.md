@@ -11,6 +11,7 @@
 * Pablo Barreyro
 * Brenda Franco
 * Adrian Messado
+* Adriana Chen
 * Joy Paglinawan
 * Julia Sheremet
 

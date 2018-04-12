@@ -857,99 +857,6 @@ let downtownPlacesArray = [
 	}
 ];
 
-// function to filter by places properties
-// input: userInput, could be any properties of a place
-// places: an array of places
-// return: an array of matched places
-
-// const filterByPlaceProperties = (input, places) => {
-// function filterByPlaceProperties(input, places) {
-//   var outplaces =[];
-//   places.forEach(function(place){
-//     for(let property in place){
-//       if(place[property] === input){
-//         outplaces.push(place);
-//       } else if(Array.isArray(place[property]) && place[property].includes(input)){
-//         outplaces.push(place);
-//       }
-//     }
-//   });
-//   return outplaces;
-// };
-// }
-
-// const countElement = aArr => {
-// // count appear times of each element in a array
-// // aArr: an array
-// // return: an object with elements and counts
-// 	let countObj = {};
-// 	aArr.forEach(function(element){
-// 		if (countObj.hasOwnProperty(element.name)){
-// 			countObj[element.name] ++;
-// 		}else{
-// 			countObj[element.name] = 1;
-// 		}
-// 	});
-// 	return countObj;
-// };
-//
-// const findProWithSameValue = (oObj, value) => {
-// // find the property with the same value in an object
-// // oObj: an object
-// // value: target value
-// // return: an array
-// 	let output = [];
-// 	for(let pro in oObj){
-// 		if(oObj[pro] === value){
-// 			output.push(pro);
-// 		}
-// 	}
-// 	return output;
-// };
-//
-// const filterWithMutipleInputs = (userInputs, places) => {
-// // find all places include inputs
-// // inputs: an array of inputs
-// // places: an array of place objects
-// // return: an array of place name
-// 	let outputsArr = [];
-// 	// remove false user input
-// 	inputs = userInputs.filter(userInput => Boolean(userInput));
-// 	inputs.forEach(function(input){
-// 		outputsArr = outputsArr.concat(filterByPlaceProperties(input, places));
-// 	});
-// 	let placeCount = countElement(outputsArr);
-// 	return findProWithSameValue(placeCount, inputs.length);
-// };
-//
-//
-// const findPlaceByName = (inputName, places) => {
-// // find place by its name
-// // inputName: string
-// // places: an array of place objects
-// // return: an  place object
-// 	let aPlace;
-// 	places.forEach( place => {
-// 		if(place.name === inputName){
-// 			aPlace =  place;
-// 		}
-// 	});
-// 	return aPlace;
-// };
-//
-//
-// const findAllPlaces = (userInputs, places) => {
-// // find all place objects
-// // userInputs: an array of inputs
-// // places: an array of place object
-// // return: an array of matched place objects
-// 	let results = [];
-// 	userInputs.forEach( inputName => {
-// 		let placeObj = findPlaceByName(inputName, places);
-// 		results.push(placeObj);
-// 	});
-// 	return results;
-// }
 function filterByPlaceProperties(input, places) {
   var outplaces =[];
   places.forEach(function(place){
@@ -1027,13 +934,11 @@ $(function() {
     var inputHours = $("input:radio[name=hours]:checked").val();
     var results = [];
 
-    // $("input:checkbox[name=diet]:checked").each(function(){
-    //   var inputDiet = $(this).val();
-    // });
+    $("input:checkbox[name=diet]:checked").each(function(){
+      var inputDiet = $(this).val();
+    });
 
     if (inputLocation === "pearl") {
-      // var inputNames = filterWithMutipleInputs(inputs, pearlPlacesArray);
-      // var results = findAllPlaces(inputNames, pearlPlacesArray);
 
       results = filterByPlaceProperties(inputHours, pearlPlacesArray);
       results = filterByPlaceProperties(inputType, results);
@@ -1041,8 +946,6 @@ $(function() {
 
       displayOutput(results);
     } else if (inputLocation === "downtown"){
-      // var inputNames = filterWithMutipleInputs(inputs, downtownPlacesArray);
-      // var results = findAllPlaces(inputNames, downtownPlacesArray);
 
       results = filterByPlaceProperties(inputHours, downtownPlacesArray);
       results = filterByPlaceProperties(inputType, results);

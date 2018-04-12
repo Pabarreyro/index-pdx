@@ -118,6 +118,10 @@ li.nav-bar-float {
   padding-top: 24px;
 }
 
+#all-locations {
+  display: none;
+}
+
 #submitBtn {
   display: block;
   margin: 0 auto;
@@ -143,6 +147,18 @@ li.nav-bar-float {
 
 .place {
   padding-top: 14px;
+}
+
+.no-place {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 5px;
+  color: #f7bd33;
+}
+
+.no-place img{
+  margin: 10px auto;
 }
 
 .place img {

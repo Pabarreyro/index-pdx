@@ -857,97 +857,112 @@ let downtownPlacesArray = [
 	}
 ];
 
-const filterByPlaceProperties = (input, places) => {
 // function to filter by places properties
 // input: userInput, could be any properties of a place
 // places: an array of places
 // return: an array of matched places
-	let outplaces = [];
-	places.forEach(function (place) {
-		for (let property in place) {
-			if (place[property] === input) {
-				outplaces.push(place);
-			} else if (Array.isArray(place[property]) && place[property].includes(input)) {
-				outplaces.push(place);
-			}
-		}
-	});
-	return outplaces;
+
+// const filterByPlaceProperties = (input, places) => {
+// function filterByPlaceProperties(input, places) {
+//   var outplaces =[];
+//   places.forEach(function(place){
+//     for(let property in place){
+//       if(place[property] === input){
+//         outplaces.push(place);
+//       } else if(Array.isArray(place[property]) && place[property].includes(input)){
+//         outplaces.push(place);
+//       }
+//     }
+//   });
+//   return outplaces;
+// };
+// }
+
+// const countElement = aArr => {
+// // count appear times of each element in a array
+// // aArr: an array
+// // return: an object with elements and counts
+// 	let countObj = {};
+// 	aArr.forEach(function(element){
+// 		if (countObj.hasOwnProperty(element.name)){
+// 			countObj[element.name] ++;
+// 		}else{
+// 			countObj[element.name] = 1;
+// 		}
+// 	});
+// 	return countObj;
+// };
+//
+// const findProWithSameValue = (oObj, value) => {
+// // find the property with the same value in an object
+// // oObj: an object
+// // value: target value
+// // return: an array
+// 	let output = [];
+// 	for(let pro in oObj){
+// 		if(oObj[pro] === value){
+// 			output.push(pro);
+// 		}
+// 	}
+// 	return output;
+// };
+//
+// const filterWithMutipleInputs = (userInputs, places) => {
+// // find all places include inputs
+// // inputs: an array of inputs
+// // places: an array of place objects
+// // return: an array of place name
+// 	let outputsArr = [];
+// 	// remove false user input
+// 	inputs = userInputs.filter(userInput => Boolean(userInput));
+// 	inputs.forEach(function(input){
+// 		outputsArr = outputsArr.concat(filterByPlaceProperties(input, places));
+// 	});
+// 	let placeCount = countElement(outputsArr);
+// 	return findProWithSameValue(placeCount, inputs.length);
+// };
+//
+//
+// const findPlaceByName = (inputName, places) => {
+// // find place by its name
+// // inputName: string
+// // places: an array of place objects
+// // return: an  place object
+// 	let aPlace;
+// 	places.forEach( place => {
+// 		if(place.name === inputName){
+// 			aPlace =  place;
+// 		}
+// 	});
+// 	return aPlace;
+// };
+//
+//
+// const findAllPlaces = (userInputs, places) => {
+// // find all place objects
+// // userInputs: an array of inputs
+// // places: an array of place object
+// // return: an array of matched place objects
+// 	let results = [];
+// 	userInputs.forEach( inputName => {
+// 		let placeObj = findPlaceByName(inputName, places);
+// 		results.push(placeObj);
+// 	});
+// 	return results;
+// }
+function filterByPlaceProperties(input, places) {
+  var outplaces =[];
+  places.forEach(function(place){
+    for(let property in place){
+      if(place[property] === input){
+        outplaces.push(place);
+      } else if(Array.isArray(place[property]) && place[property].includes(input)){
+        outplaces.push(place);
+      }
+    }
+  });
+  return outplaces;
 };
-
-const countElement = aArr => {
-// count appear times of each element in a array
-// aArr: an array
-// return: an object with elements and counts
-	let countObj = {};
-	aArr.forEach(function(element){
-		if (countObj.hasOwnProperty(element.name)){
-			countObj[element.name] ++;
-		}else{
-			countObj[element.name] = 1;
-		}
-	});
-	return countObj;
-};
-
-const findProWithSameValue = (oObj, value) => {
-// find the property with the same value in an object
-// oObj: an object
-// value: target value
-// return: an array
-	let output = [];
-	for(let pro in oObj){
-		if(oObj[pro] === value){
-			output.push(pro);
-		}
-	}
-	return output;
-};
-
-const filterWithMutipleInputs = (userInputs, places) => {
-// find all places include inputs
-// inputs: an array of inputs
-// places: an array of place objects
-// return: an array of place name
-	let outputsArr = [];
-	// remove false user input
-	inputs = userInputs.filter(userInput => Boolean(userInput));
-	inputs.forEach(function(input){
-		outputsArr = outputsArr.concat(filterByPlaceProperties(input, places));
-	});
-	let placeCount = countElement(outputsArr);
-	return findProWithSameValue(placeCount, inputs.length);
-};
-
-
-const findPlaceByName = (inputName, places) => {
-// find place by its name
-// inputName: string
-// places: an array of place objects
-// return: an  place object
-	let aPlace;
-	places.forEach( place => {
-		if(place.name === inputName){
-			aPlace =  place;
-		}
-	});
-	return aPlace;
-};
-
-
-const findAllPlaces = (userInputs, places) => {
-// find all place objects
-// userInputs: an array of inputs
-// places: an array of place object
-// return: an array of matched place objects
-	let results = [];
-	userInputs.forEach( inputName => {
-		let placeObj = findPlaceByName(inputName, places);
-		results.push(placeObj);
-	});
-	return results;
-}
-
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //User logic
@@ -969,63 +984,103 @@ function displayAtmosphere(array) {
 	}
 }
 
-$(function () {
-	time();
-	$("#filter-form").submit(function (event) {
-		event.preventDefault();
-		$(".intro").hide();
-		$("#user-output").empty();
+function displayOutput(results) {
+  if (results.length > 0) {
+    results.forEach(function(result){
+      $("#user-output").append( '<div class="well place">' +
+      '<img class="placeImage" src="' + result.img + '" alt="an image of ' + result.name +  '" id="placeImg">' +
+      '<h2><span class="h2-style">' + result.name + '</span>  <i data-feather="star" class="floatImg"></i></h2>' +
+      '<i data-feather="dollar-sign" id="dollar-sign"></i>'.repeat(result.price) +
+      '<p class="hrs-float"><strong>Hours: </strong></p>' +
+      '<ul id="hours-list">' +
+      '<li class="weeknight-hours">' + result.openTime + '<span id="open-time"></span> - <span id="close-time">' + result.closeTime + '</span></li>' +
+      '</ul>' +
+      '<p>' + result.desc + '</p>' +
+      '<ul id="features-list">' +
+      result.atmosphere.join(", ") +
+      '</ul>' +
+      '<script>' +
+      'feather.replace()' +
+      '</script>' +
+      '<hr>' +
+      '</div>');
+    });
+  } else {
+    $("#user-output").append( '<div class="well no-place">' +
+    '<h2><span class="h2-style">Wish we could help!</span>  <i data-feather="star" class="floatImg"></i></h2>' + '<img class="placeImage" src="img/rejection.gif" alt="no, no, no" id="placeImg">' +
+    '<p> We are working to expand our functionality. Please try again soon!</p>' +
+    '</div>');
+  }
+}
 
-		var inputPrice = parseInt($("#inputPrice").val());
-		console.log(inputPrice);
-		var inputLocation = $("input:radio[name=location]:checked").val();
-		var inputType = $("#inputType").val();
-		var inputHours = $("input:radio[name=hours]:checked").val();
+$(function() {
+  time();
 
-		$("input:checkbox[name=diet]:checked").each(function () {
-			var inputDiet = $(this).val();
-		});
+  $("#filter-form").submit(function(event) {
+    event.preventDefault();
+    $(".intro").hide();
+    $("#user-output").empty();
 
-		// inputs is one dimentional array,
-		// if any userInput is an array (eg.inputCheckbox), then inputs = inputs.concat(inputCheckbox)
-		var inputs = [inputPrice, inputType, inputHours];
-		var inputNames = filterWithMutipleInputs(inputs, pearlPlacesArray);
-		var results = findAllPlaces(inputNames, pearlPlacesArray);
+    var inputLocation = $("input:radio[name=location]:checked").val();
+    var inputPrice = parseInt($("#inputPrice").val());
+    var inputType = $("#inputType").val();
+    var inputHours = $("input:radio[name=hours]:checked").val();
+    var results = [];
 
-		// console.log(results);
-		// var results = filterByPlaceProperties(inputHours, pearlPlacesArray);
-		// console.log(results);
-		// results = filterByPlaceProperties(inputType, results);
-		// console.log(results);
-		// results = filterByPlaceProperties(inputPrice, results);
-		// console.log(results);
+    // $("input:checkbox[name=diet]:checked").each(function(){
+    //   var inputDiet = $(this).val();
+    //   console.log(inputDiet);
+    // });
+    //
+    // inputs = inputs.concat(inputDiet);
 
-		results.forEach(function (result) {
-			$("#user-output").append('<div class="well place">' +
-				'<img class="placeImage" src="' + result.img + '" alt="an image of ' + result.name + '" id="placeImg">' +
-				'<h2><span class="h2-style">' + result.name + '</span>  <i data-feather="star" class="floatImg"></i></h2>' +
-				'<i data-feather="dollar-sign" id="dollar-sign"></i>'.repeat(result.price) +
-				'<p class="hrs-float"><strong>Hours: </strong></p>' +
-				'<ul id="hours-list">' +
-				'<li class="weeknight-hours">' + result.openTime + '<span id="open-time"></span> - <span id="close-time">' + result.closeTime + '</span></li>' +
-				'</ul>' +
-				'<p>' + result.desc + '</p>' +
-				'<ul id="features-list">' +
-				result.atmosphere.join(", ") +
-				'</ul>' +
-				'<script>' +
-				'feather.replace()' +
-				'</script>' +
-				'<hr>' +
-				'</div>');
-		});
+    if (inputLocation === "pearl") {
+      // var inputNames = filterWithMutipleInputs(inputs, pearlPlacesArray);
+      // var results = findAllPlaces(inputNames, pearlPlacesArray);
 
+      results = filterByPlaceProperties(inputHours, pearlPlacesArray);
+      results = filterByPlaceProperties(inputType, results);
+      results = filterByPlaceProperties(inputPrice, results);
 
-		$("#filter-form").toggleClass("hide");
-	});
+      displayOutput(results);
+    } else if (inputLocation === "downtown"){
+      // var inputNames = filterWithMutipleInputs(inputs, downtownPlacesArray);
+      // var results = findAllPlaces(inputNames, downtownPlacesArray);
 
-	$("#hamburger-nav-icon").click(function () {
-		$("#filter-form").toggleClass("hide");
-	});
+      results = filterByPlaceProperties(inputHours, downtownPlacesArray);
+      results = filterByPlaceProperties(inputType, results);
+      results = filterByPlaceProperties(inputPrice, results);
 
+      displayOutput(results);
+    } else if (inputLocation === "all"){
+     	pearlCopy = pearlPlacesArray.map(place => place);
+			Array.prototype.push.apply(pearlCopy,downtownPlacesArray);
+			
+      results = filterByPlaceProperties(inputHours, pearlCopy);
+      results = filterByPlaceProperties(inputType, results);
+      results = filterByPlaceProperties(inputPrice, results);
+
+      // console.log("Checking all");
+      // results = filterByPlaceProperties(inputHours, pearlPlacesArray);
+      // console.log(results);
+      // results = filterByPlaceProperties(inputHours, downtownPlacesArray);
+      // console.log(results);
+      // results = filterByPlaceProperties(inputType, results);
+      // console.log(results);
+      // results = filterByPlaceProperties(inputPrice, results);
+      displayOutput(results);
+    }
+
+    $("#filter-form").toggleClass("hide");
+  });
+
+  $("#hamburger-nav-icon").click(function(){
+    $("#filter-form").toggleClass("hide");
+    $("#filter-form")[0].reset();
+    $("#filter-form")[1].reset();
+    $("#filter-form")[2].reset();
+    $("#filter-form")[3].reset();
+    $("#filter-form")[4].reset();
+
+  });
 });

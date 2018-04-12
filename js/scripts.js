@@ -157,10 +157,9 @@ function displayOutput(results) {
     });
 
   } else {
-    $("#user-output").append( '<div class="well place">' +
-    '<img class="placeImage" src="' + '" alt="an image of ' +  '" id="placeImg">' +
-    '<h2><span class="h2-style">Wish we could help!</span>  <i data-feather="star" class="floatImg"></i></h2>' +
-    '<p> We are working to expand out functionality. Please try again soon!</p>' +
+    $("#user-output").append( '<div class="well no-place">' +
+    '<h2><span class="h2-style">Wish we could help!</span>  <i data-feather="star" class="floatImg"></i></h2>' + '<img class="placeImage" src="img/rejection.gif" alt="no, no, no" id="placeImg">' +
+    '<p> We are working to expand our functionality. Please try again soon!</p>' +
     '</div>');
   }
 }
@@ -184,24 +183,28 @@ $(function() {
       var inputDiet = $(this).val();
     });
 
-    if (inputLocation === "Pearl") {
+    if (inputLocation === "pearl") {
       results = filterByPlaceProperties(inputHours, pearlPlacesArray);
       results = filterByPlaceProperties(inputType, results);
       results = filterByPlaceProperties(inputPrice, results);
 
       console.log(results.length);
       displayOutput(results);
-    } else if (inputLocation === "Downtown"){
+    } else if (inputLocation === "downtown"){
       results = filterByPlaceProperties(inputHours, downtownPlacesArray);
       results = filterByPlaceProperties(inputType, results);
       results = filterByPlaceProperties(inputPrice, results);
 
       console.log(results.length);
       displayOutput(results);
-    } else {
+    } else if (inputLocation === "all"){
+      console.log("Checking all");
       results = filterByPlaceProperties(inputHours, pearlPlacesArray);
+      console.log(results);
       results = filterByPlaceProperties(inputHours, downtownPlacesArray);
+      console.log(results);
       results = filterByPlaceProperties(inputType, results);
+      console.log(results);
       results = filterByPlaceProperties(inputPrice, results);
 
       console.log(results.length);

@@ -110,6 +110,10 @@ li.nav-bar-float {
   padding-top: 24px;
 }
 
+#all-locations {
+  display: none;
+}
+
 #submitBtn {
   display: block;
   margin: 0 auto;

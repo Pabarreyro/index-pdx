@@ -1,4 +1,3 @@
-// Business Logic
 let pearlPlacesArray = [
   {
     name:"Powells",
@@ -87,95 +86,142 @@ let downtownPlacesArray = [
   {name:"Pedego Electric Bikes Portland",price:3,type:["shopping"],diet:null,atmosphere:["sporting goods", "bicycle store", "bicycle materials", "rentals"],hours:["morning", "afternoon"],img:"img\/pedego.png",openTime:"7AM",closeTime:"6PM",desc:"Pedego Portland is like heaven when you\u2019re shopping for an electric bike. The experience is unmatched anywhere on Earth. We are passionate electric bike experts who treat our customers like dear friends because that\u2019s exactly what you are to us. We put our hearts into helping you find the perfect electric bicycle, and making sure you get the most out of it. When you walk into Pedego Portland, you\u2019ll find a welcoming and comfortable atmosphere where you\u2019ll be treated like family. "}
 ];
 
-// function filter by places properties
-// input: userInput, could be any properties of a place
-// places: an array of places
-// return: an array of matched places
+var filter1 = {
+  type: 'shopping'
+};
+
+var filter2 = {
+  hours: 'afternoon'
+};
+
+// var users = [{
+//     name: 'John',
+//     email: 'johnson@mail.com',
+//     age: 25,
+//     address: 'USA'
+//   },
+//   {
+//     name: 'Tom',
+//     email: 'tom@mail.com',
+//     age: 35,
+//     address: 'England'
+//   },
+//   {
+//     name: 'Mark',
+//     email: 'mark@mail.com',
+//     age: 28,
+//     address: 'England'
+//   }
+// ];
+
+function Search() {
+  this.parameters = [];
+  this.outputArray = [];
+}
+
+function Filter(inputKey, inputValue) {
+  this.key = inputKey;
+  this.value = inputValue;
+}
+
+Search.prototype.addSearchParameter = function(filter) {
+  this.parameters.push(filter);
+};
+
+Search.prototype.generateOutput = function(array) {
+  let outputArray = this.outputArray;
+  let key = this.parameters[0].key;
+  let value = this.parameters[0].value;
+
+  array.forEach(function(place) {
+    if (place[key] !== null) {
+      if (place[key] === value){
+        outputArray.push(place)
+      } else if(Array.isArray(place[key]) && place[key].includes(value)){
+        outputArray.push(place)
+      }
+    }
+  });
+}
+
+Search.prototype.filterOutput = function(){
+  for (var i = 1; i < this.parameters.length; i++) {
+    key = this.parameters[i].key;
+    value = this.parameters[i].value;
+
+    console.log(key);
+    console.log(value);
+
+    this.outputArray.filter(place => place[key] === value);
+    console.log(this.outputArray);
+  }
+}
+
 function filterByPlaceProperties(input, places) {
   console.log(input);
   var outplaces =[];
-  places.forEach(function(place){
+
+  places.forEach(function(place) {
     for(let property in place){
-      if(place[property] === input){
-        outplaces.push(place);
-      } else if(Array.isArray(place[property]) && place[property].includes(input)){
-        outplaces.push(place);
+      if (place[property] !== null) {
+        if(place[property] === input){
+          outplaces.push(place);
+        } else if(Array.isArray(place[property]) && place[property].includes(input)){
+          outplaces.push(place);
+        }
+
       }
     }
   });
   return outplaces;
 };
 
-// Neighborhood objects
-function filterByPrice(inputPrice) {
-  var neighborhoods = [pearl, downtown];
 
-  for (i = 0; i < neighborhoods.length; i++) {
-   if (inputPrice === neighborhoods[i].price) {
-     neighborhoods[i].price;
-   }
- }
-}
-
-//User logic
-function displayAtmosphere(array) {
-  for(var i = 0; i < array.length; i ++){
-    '<li>' + array[i] + '</li>';
-  }
-}
-
-$(function() {
-  $("#filter-form").submit(function(event) {
-    event.preventDefault();
-
-    var inputPrice = parseInt($("#inputPrice").val());
-    var inputLocation = $("input:radio[name=location]:checked").val();
-    var inputType = $("#inputType").val();
-    var inputHours = $("input:radio[name=hours]:checked").val();
-
-    $("input:checkbox[name=diet]:checked").each(function(){
-      var inputDiet = $(this).val();
-    });
-
-    var results = filterByPlaceProperties(inputHours, pearlPlacesArray);
-    console.log(results);
-    results = filterByPlaceProperties(inputType, results);
-    console.log(results);
-    results = filterByPlaceProperties(inputPrice, results);
-    console.log(results);
-
-    results.forEach(function(result){
-      $("#user-output").append( '<div class="well place">' +
-                                  '<img class="placeImage" src="' + result.img + '" alt="an image of ' + result.name +  '" id="placeImg">' +
-                                  '<h2><span class="h2-style">' + result.name + '</span>  <i data-feather="star" class="floatImg"></i></h2>' +
-                                  '<i data-feather="dollar-sign" id="dollar-sign"></i>'.repeat(result.price) +
-                                  '<p class="hrs-float"><strong>Hours: </strong></p>' +
-                                  '<ul id="hours-list">' +
-                                    '<li class="weeknight-hours">' + result.openTime + '<span id="open-time"></span> - <span id="close-time">' + result.closeTime + '</span></li>' +
-                                  '</ul>' +
-                                  '<p>' + result.desc + '</p>' +
-                                  '<ul id="features-list">' +
-                                    result.atmosphere.join(", ") +
-                                  '</ul>' +
-                                  '<script>' +
-                                    'feather.replace()' +
-                                  '</script>' +
-                                '<hr>' +
-                                '</div>');
-
-        // '<div class="well place">' +
-        //                           '<img class="placeImage" src="img/powells.jpeg" alt="an image of a bookstore">' +
-        //                           '<h2><span class="h2-style">' + result.name + '</span>  <i data-feather="star" class="floatImg"></i><i data-feather="star" class="floatImg"></i><i data-feather="star" class="floatImg"></i></h2>' +
-        //                           '<hr>' +
-        //                         '</div>');
-    });
+//
+// let testSearch = new Search();
+// console.log(testSearch);
+// let testFilterA = new Filter("hours", "afternoon");
+// let testFilterB = new Filter("type", "food");
+// let testFilterC = new Filter("price", 2);
+//
+// testSearch.addSearchParameter(testFilterA);
+// testSearch.addSearchParameter(testFilterB);
+// testSearch.addSearchParameter(testFilterC);
+//
+// console.log(testSearch.parameters);
+//
+// testSearch.generateOutput(pearlPlacesArray);
+//
+// testSearch.filterOutput();
+//
+// console.log(testSearch.outputArray);
 
 
-    $("#filter-form").toggleClass("hide");
-  });
+var results = filterByPlaceProperties("afternoon", pearlPlacesArray);
+console.log(results);
+results = filterByPlaceProperties("food", results);
+console.log(results);
+results = filterByPlaceProperties(2, results);
+console.log(results);
 
-  $("#hamburger-nav-icon").click(function(){
-    $("#filter-form").toggleClass("hide");
-  });
 
-});
+
+
+// var outputArray = [];
+// var outputArray2 = [];
+//
+// var firstFilterRun = pearlPlacesArray.filter(function(item) {
+//   for (var key in filter1) {
+//     if (item[key].includes(filter1[key])) {
+//       outputArray.push(item);
+//     }
+//   }
+// });
+//
+// var secondFilterRun = outputArray.filter(function(item) {
+//   for (var key in filter2) {
+//     if (item[key].includes(filter2[key])) {
+//       outputArray2.push(item);
+//     }
+//   }
+// });

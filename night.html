@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+      <link href="css/night.css" rel="stylesheet" type="text/css">
+      <script src="js/jquery-3.3.1.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+      <script src="js/scripts.js"></script>
+      <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+      <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Abel|Old+Standard+TT" rel="stylesheet">
+      <style>
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+ /* Make the image fully responsive */
+ .carousel-inner img {
+     width: 100%;
+     height: 100%;
+ }
+
+ </style>
+    <title>Index PDX</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="navbar navbar-dark bg-dark" id="navbar-custom">
+      <!-- <div class="navbar" > -->
+        <h1>Index PDX</h1>
+        <div id="arrow">&rarr;</div>
+        <span class="navbar-toggler-icon" id="hamburger-nav-icon"></span>
+      </div>
+      <div class="well" id="form-field">
+        <form class="hide" id="filter-form">
+          <div class="form-row">
+            <div class="form-control well col-lg-2">
+              <label for="price" class="label-dropdown">Price</label>
+              <select class="form-control">
+                <option>$</option>
+                <option>$$</option>
+                <option>$$$</option>
+              </select>
+            </div>
+            <div class="form-control well col-lg-2">
+              <label for="location" class="label-dropdown">Location</label>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="location" value="NW">
+                  NW
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="location" value="SW">
+                  SW
+                </label>
+              </div>
+            </div>
+            <div class="form-control well col-lg-2">
+              <label for="type" class="label-dropdown">Type</label>
+              <select class="form-control">
+                <option>Music</option>
+                <option>Food</option>
+              </select>
+            </div>
+            <div class="form-control well col-lg-2">
+              <label for="hours" class="label-dropdown">Hours</label>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="hours" value="Early Morning">
+                  Early Morning
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="hours" value="Morning">
+                  Morning
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="hours" value="Afternoon">
+                  Afternoon
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="hours" value="Late Night">
+                  Late Night
+                </label>
+              </div>
+            </div>
+            <div class="form-control well col-lg-2">
+              <label class="label-dropdown" class="label-dropdown">Dietary Restrictions</label>
+              <br>
+              <input type="checkbox" name="diet" value="Vegan"> Vegan<br>
+              <input type="checkbox" name="diet" value="Gluten Free"> Gluten Free<br>
+              <input type="checkbox" name="diet" value="Raw"> Raw<br>
+              <input type="checkbox" name="diet" value="Organic"> Organic<br>
+            </div>
+          </div>
+          <div id="submitBtn">
+            <button type="submit" class="btn btn btn-outline-light w-75 p-2">Filter</button>
+          </div>
+      </form>
+    </div>
+      <main class="container-fluid" id="user-output">
+        <div class="intro">
+          <h2>Welcome to the City of Roses!</h2>
+          <p id="pintro">Whether you're here to visit or you've been here all your life, we created this page for anyone who wants to find places to go, food to eat and people to meet! With Portland, we pride ourselves in the plethora of different cuisines with down to earth prices.</p>
+
+          <div id="carousel" class="carousel slide" data-ride="carousel">
+
+            <!-- Indicators -->
+            <ul class="carousel-indicators">
+              <li data-target="#demo" data-slide-to="0" class="active"></li>
+              <li data-target="#demo" data-slide-to="1"></li>
+              <li data-target="#demo" data-slide-to="2"></li>
+            </ul>
+
+            <!-- The slideshow -->
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="img/carousel/trails-bridge.jpg" alt="Trails Bridge" class="carousel-img">
+              </div>
+              <div class="carousel-item">
+                <img src="img/carousel/food-truck3.jpg" alt="Food Truck" class="carousel-img">
+              </div>
+              <div class="carousel-item">
+                <img src="img/carousel/portland-oldtown.jpg" alt="Portland Oldtown" class="carousel-img">
+              </div>
+              <div class="carousel-item">
+                <img src="img/carousel/club.jpg" alt="Portland Club" class="carousel-img">
+              </div>
+              <div class="carousel-item">
+                <img src="img/carousel/unicycle-dude.jpg" alt="Max Def" class="carousel-img">
+              </div>
+              <div class="carousel-item">
+                <img src="img/carousel/trails-bigfoot.jpg" alt="Human Big Foot" class="carousel-img">
+              </div>
+              <div class="carousel-item">
+                <img src="img/carousel/food-truck2.jpg" alt="Food Truck" class="carousel-img">
+              </div>
+              <div class="carousel-item">
+                <img src="img/carousel/moda-center.jpg" alt="Moda Center" class="carousel-img">
+              </div>
+              <div class="carousel-item">
+                <img src="img/carousel/forest-park.jpg" alt="Forest Trail" class="carousel-img">
+              </div>
+              <div class="carousel-item">
+                <img src="img/carousel/club2.jpg" alt="Club Night" class="carousel-img">
+              </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </a>
+
+          </div>
+
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

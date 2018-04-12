@@ -951,16 +951,15 @@ const findAllPlaces = (userInputs, places) => {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //User logic
-function time(){ //fluctuate the css stylesheet
-  var time = new Date();
-  // var hourNow = time.getHours();
-  var hourNow = 17;
+function time() { //fluctuate the css stylesheet
+	var time = new Date();
+	var hourNow = time.getHours();
 
-  if (hourNow > 18) {
-    $("head").append('<link href="css/night.css" rel="stylesheet" type="text/css">');
-  } else {
-    $("head").append('<link href="css/coolearth.css" rel="stylesheet" type="text/css">');
-  }
+	if (hourNow > 18) {
+		$("head").append('<link href="css/night.css" rel="stylesheet" type="text/css">');
+	} else {
+		$("head").append('<link href="css/coolearth.css" rel="stylesheet" type="text/css">');
+	}
 }
 
 function displayAtmosphere(array) {

@@ -1,16 +1,11 @@
 # **Epicodus Intro Team Week**
-## Working Names
-
-* Portland A-GoGo
-* Do Portland
-* Portland Offline
-* PDXnow
-* Index PDX
+## PDX Now
 
 ## Team PBaJ<sup>2</sup>
 * Pablo Barreyro
 * Brenda Franco
 * Adrian Messado
+* Adriana (Feng) Chen
 * Joy Paglinawan
 * Julia Sheremet
 
@@ -41,7 +36,7 @@ Takes multiple filter parameters | diet: "vegan"<br>price: "$" | [1: Place {name
 
 MIT License
 
-Copyright (c) 2018 **_PBaJ<sup>2</sup>_**
+Copyright (c) 2018 **_PBaaJ<sup>2</sup>_**
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

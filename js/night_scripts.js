@@ -968,8 +968,8 @@ function filterByPlaceProperties(input, places) {
 //User logic
 function time(){ //fluctuate the css stylesheet
   var time = new Date();
-  var hourNow = time.getHours();
-
+  // var hourNow = time.getHours();
+  var hourNow = 20;
 
   if (hourNow > 18) {
     $("head").append('<link href="css/night.css" rel="stylesheet" type="text/css">');
@@ -992,9 +992,9 @@ function displayOutput(results) {
       '<h2><span class="h2-style">' + result.name + '</span>  <i data-feather="star" class="floatImg"></i></h2>' +
       '<i data-feather="dollar-sign" id="dollar-sign"></i>'.repeat(result.price) +
       '<p class="hrs-float"><strong>Hours: </strong></p>' +
-      '<p id="hours-list">' +
-      '<p class="weeknight-hours">' + result.openTime + '<span id="open-time"></span> - <span id="close-time">' + result.closeTime + '</span></p>' +
-      '</p>' +
+      '<ul id="hours-list">' +
+      '<li class="weeknight-hours">' + result.openTime + '<span id="open-time"></span> - <span id="close-time">' + result.closeTime + '</span></li>' +
+      '</ul>' +
       '<p>' + result.desc + '</p>' +
       '<ul id="features-list">' +
       result.atmosphere.join(", ") +

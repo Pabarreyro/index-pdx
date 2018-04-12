@@ -3,7 +3,7 @@ h1 {
   font-size: 47px;
 }
 
-.intro h2 {
+h2 {
   text-align: center;
 }
 
@@ -163,6 +163,7 @@ li.nav-bar-float {
 
 .place img {
   width: 150px;
+  border-radius: 100%;
 }
 
 #dollar-sign {
@@ -186,11 +187,12 @@ li.nav-bar-float {
 
 .hrs-float {
   float:right;
-  margin-right: 60px;
+  /*margin-right: 60px;*/
 }
 
-.weekday-hours, .weeknight-hours {
+.weeknight-hours {
   float:right;
+  padding-left: 10px;
   padding-bottom: 12px;
 }
 
@@ -198,6 +200,7 @@ li.nav-bar-float {
   width: 100%;
   margin: 0 auto;
 }
+
 
 img.carousel-img {
   width: auto;
@@ -208,50 +211,6 @@ img.carousel-img {
   margin-right: auto;
 }
 
-@media only screen and (max-width: 576px) {
-  .carousel .carousel-inner .item {
-  height: 100px // feel free to add the height you want to use but it's going to change the ratio of your image
-  }
-}
-
-/*Not working, need to figure out*/
-@media (max-width: @screen-sm-min) {
-  body {
-    background-image: url(../img/portland.jpg);
-    font-size: 10rem;
-  }
- }
-
-/* Medium devices (desktops, 992px and up) */
-@media (min-width: @screen-md-min) { ... }
-
-/* Large devices (large desktops, 1200px and up) */
-@media (min-width: @screen-lg-min) { ... }
-
-/* // Extra small devices (portrait phones, less than 576px) */
-
-
-/* @media  screen and (min-width: 575.98px),
- {
-  div.intro,h2,p#pintro {
-    color:black;
-  }
- } */
-
- /* img.carousel-img {
-   width: auto;
- max-height: 400px;
-   display: block;
-   padding-bottom: 5%;
-     margin-left: auto;
-     margin-right: auto;
- } */
-
-.carousel img{
- display:block;
-  width:100%;
-  max-width:400px;
-}
 
 #arrow {
   float:right;
@@ -274,7 +233,7 @@ img.carousel-img {
 
 /* Small devices (landscape phones, less than 768px) */
 @media only screen and (max-width: 767.98px) {
-  #carousel{
+  #demo {
     margin-top:30%;
   }
   #arrow {
@@ -284,17 +243,7 @@ img.carousel-img {
 
  /* Medium devices (tablets, less than 992px) */
 @media (max-width: 991.98px) {
-  #carousel{
-  margin-top:20%;
+  #demo{
+    margin-top:20%;
   }
 }
-
-/* Large devices (desktops, less than 1200px) */
-@media (max-width: 1499.98px) {
-  /* #arrow {
-    margin-left: 95%;
-  } */
-}
-
-/* // Extra large devices (large desktops)
-// No media query since the extra-large breakpoint has no upper bound on its width */

@@ -4,6 +4,11 @@ h1 {
 }
 
 h2 {
+  font-family: 'Playfair Display', serif;
+  padding-bottom: 10px;
+}
+
+#welcome-text h2{
   text-align: center;
 }
 
@@ -12,6 +17,7 @@ hr {
 }
 
 #pintro {
+  text-align: center;
   font-size: 18px;
   margin-left: 20%;
   margin-right: 20%;
@@ -91,6 +97,8 @@ main.container-fluid#user-output {
   border-color: rgb(139,109,76);
   border-width: medium;
   max-width: 90%;
+  margin-top: 10px;
+  min-height: 200px;
 }
 
 label.label-dropdown {
@@ -101,6 +109,8 @@ label.label-dropdown {
   padding: 8px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
   color: white;
   background: none;
 }
@@ -145,8 +155,21 @@ li.nav-bar-float {
   padding-top: 14px;
 }
 
+.no-place {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 5px;
+  color: #f7bd33;
+}
+
+.no-place img{
+  margin: 10px auto;
+}
+
 .place img {
   width: 150px;
+  border-radius: 100%;
 }
 
 #dollar-sign {
@@ -170,11 +193,12 @@ li.nav-bar-float {
 
 .hrs-float {
   float:right;
-  margin-right: 60px;
+  /*margin-right: 60px;*/
 }
 
-.weekday-hours, .weeknight-hours {
+.weeknight-hours {
   float:right;
+  padding-left: 10px;
   padding-bottom: 12px;
 }
 
@@ -213,15 +237,17 @@ img.carousel-img {
 
 /* Small devices (landscape phones, less than 768px) */
 @media only screen and (max-width: 767.98px) {
-  #carousel{
+  #demo {
     margin-top:30%;
   }
   #arrow {
     margin-left: 85%;
   }
 }
-/* Medium devices (desktops, 992px and up) */
-@media (min-width: @screen-md-min) { ... }
 
-/* Large devices (large desktops, 1200px and up) */
-@media (min-width: @screen-lg-min) { ... }
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+  #demo{
+    margin-top:20%;
+  }
+}

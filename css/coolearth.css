@@ -1,11 +1,23 @@
+h1 {
+  font-family: 'Abril Fatface', cursive;
+  font-size: 47px;
+}
+
+.intro h2 {
+  text-align: center;
+}
+
+#pintro {
+margin-left: 20%;
+margin-right: 20%;
+}
+
 html, body {
   min-height: 100%;
 }
-body {
-  /*background-color: rgb(238,242,243);*/
-  background-image: url(../img/portland.jpg);
-  /*background-color: #90AFC5;*/
 
+body {
+  background-image:url(../img/portland.jpg);
   -webkit-background-size: cover;
  -moz-background-size: cover;
  -o-background-size: cover;
@@ -13,21 +25,21 @@ body {
   background-repeat:   no-repeat;
 }
 
-h1 {
-  /*text-align: center;*/
-  font-family: 'Abril Fatface', cursive;
-  font-size: 47px;
-}
-
 .navbar {
   color:white;
-  margin-top: 10px;
+
 }
 
 #navbar-custom {
     color: white;
-    background-color: rgba(51,107,135, .8 )!important;
-    border-color: rgb(139,109,76);
+    background-color: rgb(0,0,0, .5) !important;
+    max-width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+span.navbar-toggler-icon#hamburger-nav-icon {
+  color: white;
 }
 
 #hamburger-nav-icon:hover {
@@ -51,36 +63,34 @@ h1 {
 }
 
 #form-field {
-  background-color: rgb(51,107,135, .7);
-  /*background-image: url(../img/7.png);*/
+  background-color: rgb(0,0,0, .5) !important;
   background-size: cover;
   margin-top: 10px;
+  margin-bottom: 10px;
+  max-width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .form-control {
   text-align: left;
-  background-color: rgb(255, 255, 255, .95)
 }
-
 .form-control.well {
-    background-color: rgb(190,200,206, .1);
-    border-color: rgb(255,255,255, .6);
+    background-color: rgb(144, 134, 137, .1);
+    border: solid 1px rgb(139,109,76);
 }
 
-main#user-output.container-fluid {
-  background-color: rgb(51,107,135, .7);
+main.container-fluid#user-output {
+  background-color: rgb(0,0,0, .5);
   color: white;
   border-color: rgb(139,109,76);
-  /*border-width: medium;*/
-  margin-top: 10px;
+  border-width: medium;
+  max-width: 90%;
 }
 
 label.label-dropdown {
-  /* color: white; */
-  color: rgb(216, 244, 255);
+  color: white;
 }
-
-
 
 .col-lg-2, .col-lg-5 {
   padding: 8px;
@@ -116,24 +126,25 @@ li.nav-bar-float {
 }
 
 #features-list {
-  color: rgb(222, 198, 88);
+  color:#c6693d;
   font-weight: 400;
   font-size: 16px;
-  text-align: left;
 }
 
 #features-list:hover {
-  /* color:#FED2A0; */
-color:  rgb(224, 81, 15)
+  color:#e8d000;
 }
 
 .place {
   padding-top: 14px;
 }
 
-#dollar-sign {
-  color: #7EC14E
+.place img {
+  width: 150px;
+}
 
+#dollar-sign {
+  color: white;
 }
 
 .floatImg {
@@ -161,50 +172,36 @@ color:  rgb(224, 81, 15)
   padding-bottom: 12px;
 }
 
-/*.form-row {
-  border-radius: 0 0 2px 2px;
-}*/
-
 .form-row {
   width: 100%;
   margin: 0 auto;
 }
 
-
-i.material-icons#dollar-sign {
-  font-family: 'Material Icons';
-  font-weight: bold;
-  font-style: normal;
-  font-size: 24px;  /* Preferred icon size */
-  display: inline-block;
-  line-height: 1;
-  letter-spacing: -8px;
-  color: rgb(247, 248, 249, .8);
-  /* Support for all WebKit browsers. */
-  -webkit-font-smoothing: antialiased;
-  /* Support for Safari and Chrome. */
-  text-rendering: optimizeLegibility;
-  /* Support for Firefox. */
-  -moz-osx-font-smoothing: grayscale;
-  /* Support for IE. */
-  font-feature-settings: 'liga';
+img.carousel-img {
+  width: auto;
+max-height: 400px;
+  display: block;
+  padding-bottom: 5%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-i.material-icons#star {
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;  /* Preferred icon size */
-  display: inline-block;
-  line-height: 1;
-  letter-spacing: -4px;
-  color: rgb(224, 250, 255, .8);
-  /* Support for all WebKit browsers. */
-  -webkit-font-smoothing: antialiased;
-  /* Support for Safari and Chrome. */
-  text-rendering: optimizeLegibility;
-  /* Support for Firefox. */
-  -moz-osx-font-smoothing: grayscale;
-  /* Support for IE. */
-  font-feature-settings: 'liga';
+@media only screen and (max-width: 576px) {
+   .carousel .carousel-inner .item{
+      height: 100px // feel free to add the height you want to use but it's going to change the ratio of your image
+   }
 }
+
+/*Not working, need to figure out*/
+@media (max-width: @screen-sm-min) {
+  body {
+      background-image: url(../img/portland.jpg);
+      font-size: 10rem;
+    }
+ }
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) { ... }
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) { ... }

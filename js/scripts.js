@@ -7,7 +7,7 @@ let pearlPlacesArray = [
     diet:null,
     atmosphere:["family-friendly", "casual", "book"],
     hours:["morning", "afternoon", "evening", "late night"],
-    img:"img\/powells.jpg",
+    img:"img\/powells.jpeg",
     openTime:"9AM",
     closeTime:"11PM",
     desc:"Powell's Books is an independent bookseller serving Portland, Oregon, since 1971. We've grown to employ over 530 people across five Portland-area stores and Powells.com, and our book inventory exceeds two million volumes. In spite of our substantial size and reach, we remain grounded by our company's core values, which have guided us through the ups and downs of the bookselling industry. Each and every employee's love of books drives us forward."
@@ -118,16 +118,29 @@ function filterByPrice(inputPrice) {
 }
 
 //User logic
-// function displayAtmosphere(array) {
-//   for(var i = 0; i < array.length; i ++){
-//     '<li>' + array[i] + '</li>';
-//   }
-// }
+function time(){ //fluctuate the css stylesheet
+  var time = new Date();
+  var hourNow = time.getHours();
+
+  if (hourNow > 18) {
+    $("head").append('<link href="css/night.css" rel="stylesheet" type="text/css">');
+  } else {
+    $("head").append('<link href="css/coolearth.css" rel="stylesheet" type="text/css">');
+  }
+}
+
+function displayAtmosphere(array) {
+  for(var i = 0; i < array.length; i ++){
+    '<li>' + array[i] + '</li>';
+  }
+}
 
 $(function() {
   time();
   $("#filter-form").submit(function(event) {
     event.preventDefault();
+    $(".intro").hide();
+    $("#user-output").empty();
 
     var inputPrice = parseInt($("#inputPrice").val());
     var inputLocation = $("input:radio[name=location]:checked").val();
